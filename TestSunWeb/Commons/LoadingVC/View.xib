@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingVC" customModule="TestSunWeb" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="gX9-3y-c61" id="Lqi-ZI-R4G"/>
+                <outlet property="view" destination="mlv-MI-pEZ" id="nQ3-QY-eLO"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" alpha="0.5" contentMode="scaleToFill" id="mlv-MI-pEZ">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKe-Te-rUI">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gX9-3y-c61">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                    <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="K7q-lX-tdb"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="gX9-3y-c61" firstAttribute="centerX" secondItem="mlv-MI-pEZ" secondAttribute="centerX" id="2GQ-Ph-pcM"/>
+                <constraint firstAttribute="bottom" secondItem="mKe-Te-rUI" secondAttribute="bottom" id="94z-Pk-WHM"/>
+                <constraint firstItem="mKe-Te-rUI" firstAttribute="top" secondItem="mlv-MI-pEZ" secondAttribute="top" id="LgX-Bb-tPt"/>
+                <constraint firstItem="mKe-Te-rUI" firstAttribute="leading" secondItem="mlv-MI-pEZ" secondAttribute="leading" id="XT5-OP-JUF"/>
+                <constraint firstItem="gX9-3y-c61" firstAttribute="centerY" secondItem="mlv-MI-pEZ" secondAttribute="centerY" id="cfi-k8-Xaq"/>
+                <constraint firstAttribute="trailing" secondItem="mKe-Te-rUI" secondAttribute="trailing" id="puN-Hb-iJL"/>
+            </constraints>
+            <point key="canvasLocation" x="90" y="-118"/>
+        </view>
+    </objects>
+</document>
