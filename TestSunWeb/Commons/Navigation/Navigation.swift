@@ -16,13 +16,13 @@ class Navigation {
         setRootController(UINavigationController(rootViewController: fakeSplashVC))
     }
     
-    /*func setRootHome() {
+    func setHome() {
         DispatchQueue.main.async { [weak self] in
             if let homeVC = kStoryboardHome.instantiateViewController(withIdentifier: kHomeVC) as? HomeVC {
                 self?.setRootController(UINavigationController(rootViewController: homeVC))
             }
         }
-    }*/
+    }
     
     private func setRootController(_ controller: UIViewController, animated: Bool = false, completion: (() -> Void)? = nil ) {
         if animated {
