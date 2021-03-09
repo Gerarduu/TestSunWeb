@@ -6,40 +6,77 @@
 //
 
 import Foundation
+import CoreData
 
 protocol FakeSplashVMDelegate: class {
-    func didLoadData(flights: Flights)
+    func didLoadData()
+    func error(error: Error)
 }
 
 class FakeSplashVM {
     
     private weak var delegate: FakeSplashVMDelegate?
-    private var flights: Flights?
     
     init(delegate: FakeSplashVMDelegate) {
         self.delegate = delegate
     }
     
     func loadData() {
-        MockAPI.shared.requestMockObject(route: "flights") { [weak self] (result: Result<FlightsRoot,Error>) in
-            guard let `self` = self else {return}
+        if let cached = Preferences.getPrefsCached(), cached == true {
+            self.delegate?.didLoadData()
+        } else {
+            MockAPI.shared.requestMockObject(route: "flights") { [weak self] (result: Result<FlightsRoot,Error>) in
+                guard let `self` = self else {return}
+                switch result {
+                case .failure(let err):
+                    self.delegate?.error(error: err)
+                    return
+                case .success(let value):
+                    guard let data = value.data,
+                          let outboundFlights = data.outboundFlights,
+                          outboundFlights.count > 0,
+                          let inboundFlights = data.inboundFlights,
+                          inboundFlights.count > 0 else {
+                        self.delegate?.error(error: AppError.generic)
+                        return
+                    }
+                    self.saveData(outboundFlights,inboundFlights)
+                }
+            }
+        }
+    }
+    
+    func saveData(_ outboundFlights: [Flight], _ inboundFlights: [Flight]) {
+        
+        let group = DispatchGroup()
+        
+        group.enter()
+        FlightManager.shared.saveFlights(flights: outboundFlights, outBound: true) { [weak self] (result: Result<Bool,Error>) in
             switch result {
             case .failure(let err):
-                debugPrint("error: \(err)")
+                self?.delegate?.error(error: err)
                 return
-            case .success(let value):
-                guard let data = value.data else {
-                    return
-                }
-                self.delegate?.didLoadData(flights: data)
+            case .success:
+                group.leave()
             }
+        }
+        
+        group.enter()
+        FlightManager.shared.saveFlights(flights: inboundFlights, outBound: false) { [weak self] (result: Result<Bool,Error>) in
+            switch result {
+            case .failure(let err):
+                self?.delegate?.error(error: err)
+                return
+            case .success:
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: .main) { [weak self] in
+            Preferences.setPrefsCached(value:true)
+            self?.delegate?.didLoadData()
         }
     }
 }
 
-extension FakeSplashVM {
-    var flightsData: Flights? {
-        guard let flights = self.flights else { return nil }
-        return flights
-    }
-}
+

@@ -25,10 +25,25 @@ class FakeSplashVC: BaseVC {
     }
     
     func loadData() {
+        startWaiting()
         fakeSplashVM.loadData()
+    }
+    
+    func pushHome() {
+        Navigation.shared.setHome()
     }
 }
 
 extension FakeSplashVC: FakeSplashVMDelegate {
+    func didLoadData() {
+        stopWaiting()
+        pushHome()
+    }
     
+    func error(error: Error) {
+        stopWaiting()
+        self.showPopup(withTitle: "error.generic", withText: error.localizedDescription, withButton: "error.retry", completion: { (retry,_) in
+            self.loadData()
+        })
+    }
 }

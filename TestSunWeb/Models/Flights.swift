@@ -25,12 +25,19 @@ struct Flights: Codable {
     }
 }
 
-struct Flight: Codable {
-    var id: Int?
+protocol Transport {
+    var id: Int { get set }
+    var price: Float { get set }
+    func isConbinableWith(transport: Transport)
+}
+
+struct Flight: Codable, Transport {
+    
+    var id: Int
     var airline: String?
     var departureAirportCode: String?
     var arrivalAirportCode: String?
-    var price: Int?
+    var price: Float
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -38,5 +45,9 @@ struct Flight: Codable {
         case departureAirportCode = "departureAirportCode"
         case arrivalAirportCode = "arrivalAirportCode"
         case price = "price"
+    }
+    
+    func isConbinableWith(transport: Transport) {
+        
     }
 }
