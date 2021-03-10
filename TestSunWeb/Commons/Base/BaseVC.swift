@@ -31,10 +31,7 @@ class BaseVC: UIViewController {
     }
     //MARK: - Sets up the Navigation bar
     func setupNavBar() {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
-        
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : kColorWhite]
         self.navigationController?.navigationBar.barTintColor = kColorWhite
         self.navigationController?.navigationBar.tintColor = kColorWhite

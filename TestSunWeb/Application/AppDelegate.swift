@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Navigation.shared.setSplash()
     }
     
-    func applicationWillEnterForeground(_ application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         FlightManager.shared.saveContext()
     }
 }

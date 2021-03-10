@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -14,11 +14,26 @@
             <objects>
                 <viewController storyboardIdentifier="HomeVC" id="QHV-FM-eEF" customClass="HomeVC" customModule="TestSunWeb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9N5-kC-dPb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1rS-Od-mLq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="5LY-lz-e0l"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5LY-lz-e0l" firstAttribute="trailing" secondItem="1rS-Od-mLq" secondAttribute="trailing" id="Qvx-kb-ujw"/>
+                            <constraint firstItem="1rS-Od-mLq" firstAttribute="top" secondItem="5LY-lz-e0l" secondAttribute="top" id="SBZ-z0-pdn"/>
+                            <constraint firstItem="1rS-Od-mLq" firstAttribute="leading" secondItem="5LY-lz-e0l" secondAttribute="leading" id="kTj-2c-RUH"/>
+                            <constraint firstItem="5LY-lz-e0l" firstAttribute="bottom" secondItem="1rS-Od-mLq" secondAttribute="bottom" id="mON-xj-jtU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainTV" destination="1rS-Od-mLq" id="WMA-Wa-Ym5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9KM-b5-kgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

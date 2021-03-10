@@ -21,6 +21,12 @@ let kFakeSplashVC = "FakeSplashVC"
 let kHomeVC = "HomeVC"
 let kLoadingVC = "LoadingVC"
 
+//MARK: - Sections Home
+
+let kSectionInboundFlights = "InboundFlights"
+let kSectionOutboundFlights = "OutboundFlights"
+
+let kFlightTVC = "FlightTVC"
 
 //MARK: - Colors
 
