@@ -26,11 +26,12 @@ class HomeVC: BaseVC {
         }
     }
     
-    var flights: [FlightObject]!
     var sections = [String]()
+    var toast: ToastVC!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "home.title".localized
         setVM()
     }
 
@@ -40,14 +41,30 @@ class HomeVC: BaseVC {
     
     func fillSections() {
         if sections.count == 0 {
-            if homeVM.outboundFlights != nil {
-                sections.append(kSectionOutboundFlights)
-            }
-            if homeVM.filteredInboundFlights != nil {
-                sections.append(kSectionInboundFlights)
-            }
+            sections.append(kSectionOutboundFlights)
+            sections.append(kSectionInboundFlights)
         }
         mainTV.reloadData()
+    }
+    
+    func showToast() {
+        if self.toast == nil {
+            self.toast = ToastVC(containerView: self.view)
+            self.toast.add()
+        }
+        self.toast.show()
+        guard let price = homeVM.routePrice else {
+            return
+        }
+        self.mainTV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: self.toast.view.frame.size.height, right: 0)
+        self.toast.configure(price: price)
+    }
+    
+    func hideToast() {
+        if self.toast != nil {
+            self.mainTV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            self.toast.hide()
+        }
     }
     
     func cellForFlight(indexPath: IndexPath) -> UITableViewCell {
@@ -94,9 +111,9 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch sections[section] {
             case kSectionOutboundFlights:
-                return "Outbound Flights"
+                return "home.outbound_header".localized
             case kSectionInboundFlights:
-                return "Inbound Flights"
+                return "home.inbound_header".localized
             default:
                 return ""
         }
@@ -104,12 +121,13 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch sections[indexPath.section] {
-            case kSectionOutboundFlights:
+            case
+                kSectionOutboundFlights:
                 let flight = homeVM.outboundFlights[indexPath.row]
-                homeVM.selectOutboundFlight(_flight: flight)
+                homeVM.selectOutboundFlight(outboundFlight: flight)
             case kSectionInboundFlights:
                 let flight = homeVM.filteredInboundFlights[indexPath.row]
-                homeVM.selectInboundFlight(_flight: flight)
+                homeVM.selectInboundFlight(inboundFlight: flight)
             default:
                 break
         }
@@ -117,7 +135,17 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeVC: HomeVMDelegate {
-    func didSelectFlight() {
-        fillSections()
+    func didSelectOutboundFlight() {
+        self.fillSections()
+    }
+    
+    func didSelectInboundFlight() {
+        self.fillSections()
+        self.showToast()
+    }
+    
+    func couldntSelectInboundFlight() {
+        self.fillSections()
+        self.hideToast()
     }
 }

@@ -31,11 +31,8 @@ class BaseVC: UIViewController {
     }
     //MARK: - Sets up the Navigation bar
     func setupNavBar() {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : kColorWhite]
-        self.navigationController?.navigationBar.barTintColor = kColorWhite
-        self.navigationController?.navigationBar.tintColor = kColorWhite
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     }
     
     //MARK: - Checks if there is an instance of LoadingVC, if not, calls LoadingVC start method

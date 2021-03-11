@@ -1,13 +1,11 @@
 //
-//  uiFile.swift
+//  UI.swift
 //  TestSunWeb
 //
 //  Created by Gerard Riera  on 06/03/2021.
 //
 
 import Foundation
-import UIKit
-
 import UIKit
 
 //MARK: - Storyboards
@@ -26,7 +24,13 @@ let kLoadingVC = "LoadingVC"
 let kSectionInboundFlights = "InboundFlights"
 let kSectionOutboundFlights = "OutboundFlights"
 
+//MARK: - TVC Home
+
 let kFlightTVC = "FlightTVC"
+
+//MARK: - Toast
+
+let kToast = "Toast"
 
 //MARK: - Colors
 

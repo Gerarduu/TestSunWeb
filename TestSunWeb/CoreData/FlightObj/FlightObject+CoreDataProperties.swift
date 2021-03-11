@@ -9,6 +9,7 @@ import Foundation
 import CoreData
 
 extension FlightObject {
+    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<FlightObject> {
         return NSFetchRequest<FlightObject>(entityName: kFlightEntity)
     }

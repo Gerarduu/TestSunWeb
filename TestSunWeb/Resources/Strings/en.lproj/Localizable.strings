@@ -1,0 +1,24 @@
+/* 
+  File.strings
+  TestSunWeb
+
+  Created by Gerard Riera  on 10/03/2021.
+  
+*/
+
+// MARK: - Home
+
+"home.title" = "Flights";
+"home.outbound_header" = "Outbound Flights";
+"home.inbound_header" = "Inbound Flights";
+
+// MARK: - Toast
+
+"toast.route_price_desc" = "Route price: ";
+
+// MARK: - Error
+
+"error.retry" = "Retry";
+"error.generic" = "Something went wrong";
+
+

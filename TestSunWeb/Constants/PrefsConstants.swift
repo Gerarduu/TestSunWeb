@@ -8,3 +8,4 @@
 import Foundation
 
 let kCached = "cached"
+let kPrefsHasAlreadyLaunched = "hasAlreadyLaunched"
