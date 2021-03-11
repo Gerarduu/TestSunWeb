@@ -109,10 +109,6 @@ class HomeVM {
         }
         inboundFlight.checked = true
         
-        guard routePrice != nil else {
-            self.delegate?.couldntSelectInboundFlight()
-            return
-        }
         self.delegate?.didSelectInboundFlight()
     }
 }
