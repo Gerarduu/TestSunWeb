@@ -42,7 +42,7 @@ extension FakeSplashVC: FakeSplashVMDelegate {
     
     func error(error: Error) {
         stopWaiting()
-        self.showPopup(withTitle: "error.generic", withText: error.localizedDescription, withButton: "error.retry", completion: { (retry,_) in
+        self.showPopup(withTitle: "error.generic".localized, withText: error.localizedDescription, withButton: "error.retry".localized, completion: { (retry,_) in
             self.loadData()
         })
     }

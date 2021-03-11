@@ -6,11 +6,9 @@
 //
 
 import UIKit
-import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupFirstScreen()
         return true
@@ -20,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Navigation.shared.setSplash()
     }
     
-    func applicationWillEnterForeground(_ application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         FlightManager.shared.saveContext()
     }
 }

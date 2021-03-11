@@ -29,12 +29,14 @@ class FlightManager: NSObject {
         context.perform {
             for flightModel in flights {
                 let flight = FlightObject(context: context)
-                flight.id = flightModel.id as NSNumber?
+                flight.transportId = flightModel.id as Int
                 flight.airline = flightModel.airline
                 flight.departureAirportCode = flightModel.departureAirportCode
                 flight.arrivalAirportCode = flightModel.arrivalAirportCode
-                flight.price = flightModel.price as NSNumber?
+                flight.transportPrice = flightModel.price as Float
                 flight.outBound = outBound ? 1 : 0 /// 1 = true, 0 = false
+                flight.checked = 0
+                flight.visible = 1
             }
             
             do {
@@ -52,28 +54,14 @@ class FlightManager: NSObject {
         let items = try? context.fetch(FlightObject.fetchRequest()) as? [FlightObject]
         return items
     }
-        
-    func deleteFlight(flight: FlightObject) {
-        let context = persistentContainer.viewContext
-        context.perform {
-            do {
-                context.delete(flight)
-                try context.save()
-            } catch let error as NSError {
-                debugPrint("Could not delete file. \(error), \(error.userInfo)")
-            }
-        }
-    }
     
     func saveContext() {
         let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
+        do {
+            try context.save()
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
 }

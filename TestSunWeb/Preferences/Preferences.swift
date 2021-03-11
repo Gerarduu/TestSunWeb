@@ -15,4 +15,12 @@ class Preferences {
     static func setPrefsCached(value: Bool?) {
         UserDefaults.standard.set(value, forKey: kCached)
     }
+    
+    static func getPrefsHasAlreadyLaunched() -> Bool? {
+        return UserDefaults.standard.bool(forKey: kPrefsHasAlreadyLaunched)
+    }
+    
+    static func setPrefsHasAlreadyLaunched(value: Bool?) {
+        UserDefaults.standard.set(value, forKey: kPrefsHasAlreadyLaunched)
+    }
 }
