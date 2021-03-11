@@ -9,7 +9,9 @@ import UIKit
 
 class FlightTVC: UITableViewCell {
     
+    
     @IBOutlet weak var fromLbl: UILabel!
+    @IBOutlet weak var toDescLbl: UILabel!
     @IBOutlet weak var toLbl: UILabel!
     @IBOutlet weak var airlineLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
@@ -27,9 +29,21 @@ class FlightTVC: UITableViewCell {
         if checked == true {
             self.accessoryType = .checkmark
         }
+        
+        fromLbl.font = UIFont.boldSystemFont(ofSize: 20)
         fromLbl.text = flight.departureAirportCode
+        
+        toDescLbl.font = UIFont.systemFont(ofSize: 10)
+        toDescLbl.text = "flight_tvc.to".localized
+        
+        toLbl.font = UIFont.boldSystemFont(ofSize: 20)
         toLbl.text = flight.arrivalAirportCode
-        airlineLbl.text = flight.airline
+        
+        airlineLbl.font = UIFont.systemFont(ofSize: 10)
+        airlineLbl.textColor = .gray
+        airlineLbl.text = flight.airline + "flight_tvc.airlines".localized
+        
+        priceLbl.font = UIFont.boldSystemFont(ofSize: 20)
         guard let price = flight.price else {
             priceLbl.text = "N/D"
             return

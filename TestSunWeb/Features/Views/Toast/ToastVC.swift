@@ -31,6 +31,7 @@ class ToastVC: UIViewController {
     func setupUI() {
         routePriceDescLbl.textColor = .white
         routePriceDescLbl.text = "toast.route_price_desc".localized
+        routePriceValLbl.font = UIFont.boldSystemFont(ofSize: 20)
         routePriceValLbl.textColor = .white
         self.view.isHidden = true
     }
