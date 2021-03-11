@@ -27,7 +27,7 @@ class BaseVC: UIViewController {
     }
     
     func setupUI() {
-        self.view.backgroundColor = kColorWhite
+        self.view.backgroundColor = kColorGray
     }
     //MARK: - Sets up the Navigation bar
     func setupNavBar() {
