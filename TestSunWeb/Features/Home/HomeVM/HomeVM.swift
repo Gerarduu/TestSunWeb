@@ -19,36 +19,6 @@ class HomeVM {
     private var flights: [FlightObject]!
     private var selectedOutboundFlight: FlightObject?
     private var selectedInboundFlight: FlightObject?
-    
-    var routePrice: Float? {
-        guard selectedOutboundFlight != nil, selectedInboundFlight != nil else {
-            return nil
-        }
-        return selectedInboundFlight!.transportPrice + selectedOutboundFlight!.transportPrice
-    }
-    
-    var outboundFlights: [FlightObject]! {
-        return self.flights?
-            .filter{$0.outBound == 1}
-            .sorted(by: {
-                guard let first: NSNumber = $0.price, let second: NSNumber = $1.price else {
-                    return false
-                }
-                return first.intValue < second.intValue
-            })
-    }
-    
-    var inboundFlights: [FlightObject]! {
-        return self.flights?
-            .filter{$0.outBound == 0}
-            .sorted(by: {
-                guard let first: NSNumber = $0.price, let second: NSNumber = $1.price else {
-                    return false
-                }
-                return first.intValue < second.intValue
-            })
-    }
-    
     var filteredInboundFlights: [FlightObject]!
     
     init(delegate: HomeVMDelegate) {
@@ -57,17 +27,20 @@ class HomeVM {
     }
     
     func loadData() {
+        /// If the App has already been opened previously, load the previously selected flights.
         if let alreadyLaunched = Preferences.getPrefsHasAlreadyLaunched(), alreadyLaunched {
             loadSelectedFlights()
         } else {
-            Preferences.setPrefsHasAlreadyLaunched(value: true)
+            /// If the App has been opened for the first time, select the cheapest route possible.
             if let cheapestFlight = self.outboundFlights.first {
+                Preferences.setPrefsHasAlreadyLaunched(value: true)
                 selectOutboundFlight(outboundFlight: cheapestFlight)
             }
         }
     }
     
     func loadSelectedFlights() {
+        /// Get the previously selected flights
         self.selectedOutboundFlight = outboundFlights.first(where: {$0.checked == true})
         self.delegate?.didSelectOutboundFlight()
         self.filteredInboundFlights = inboundFlights.filter{$0.visible == true}
@@ -136,8 +109,41 @@ class HomeVM {
         }
         inboundFlight.checked = true
         
-        guard routePrice != nil else { return }
+        guard routePrice != nil else {
+            self.delegate?.couldntSelectInboundFlight()
+            return
+        }
         self.delegate?.didSelectInboundFlight()
     }
 }
 
+extension HomeVM {
+    var routePrice: Float? {
+        guard selectedOutboundFlight != nil, selectedInboundFlight != nil else {
+            return nil
+        }
+        return selectedInboundFlight!.transportPrice + selectedOutboundFlight!.transportPrice
+    }
+    
+    var outboundFlights: [FlightObject]! {
+        return self.flights?
+            .filter{$0.outBound == 1}
+            .sorted(by: {
+                guard let first: NSNumber = $0.price, let second: NSNumber = $1.price else {
+                    return false
+                }
+                return first.intValue < second.intValue
+            })
+    }
+    
+    var inboundFlights: [FlightObject]! {
+        return self.flights?
+            .filter{$0.outBound == 0}
+            .sorted(by: {
+                guard let first: NSNumber = $0.price, let second: NSNumber = $1.price else {
+                    return false
+                }
+                return first.intValue < second.intValue
+            })
+    }
+}

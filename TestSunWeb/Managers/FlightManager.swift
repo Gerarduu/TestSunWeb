@@ -55,18 +55,6 @@ class FlightManager: NSObject {
         return items
     }
     
-    func deleteFlight(flight: FlightObject) {
-        let context = persistentContainer.viewContext
-        context.perform {
-            do {
-                context.delete(flight)
-                try context.save()
-            } catch let error as NSError {
-                debugPrint("Could not delete file. \(error), \(error.userInfo)")
-            }
-        }
-    }
-    
     func saveContext() {
         let context = persistentContainer.viewContext
         do {
