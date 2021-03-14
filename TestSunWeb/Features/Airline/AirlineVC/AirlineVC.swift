@@ -51,6 +51,11 @@ class AirlineVC: BaseVC {
     override func setupUI() {
         self.navigationController?.navigationBar.prefersLargeTitles = false
         self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "airline.close".localized, style: .plain, target: self, action: #selector(closeVC))
+    }
+    
+    @objc func closeVC() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func fillSections() {
