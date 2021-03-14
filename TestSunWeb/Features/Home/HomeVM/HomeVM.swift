@@ -85,14 +85,14 @@ class HomeVM {
             }
         }
         
+        self.delegate?.didSelectOutboundFlight()
+        
         /// Select the cheapest inbound flight
         if let cheapestFlight = self.filteredInboundFlights.first {
             selectInboundFlight(inboundFlight: cheapestFlight)
         } else {
             self.delegate?.couldntSelectInboundFlight()
         }
-        
-        self.delegate?.didSelectOutboundFlight()
     }
         
     func selectInboundFlight(inboundFlight:FlightObject) {

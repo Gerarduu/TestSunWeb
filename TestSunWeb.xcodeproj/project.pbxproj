@@ -12,6 +12,8 @@
 		E80E04FBD7857E991F0EA668 /* libPods-TestSunWebUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3770A4FB78964234A814CD0D /* libPods-TestSunWebUITests.a */; };
 		F70633F625FE3E9F0027ACE0 /* AirlineVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70633F525FE3E9F0027ACE0 /* AirlineVM.swift */; };
 		F70633FE25FE3EAA0027ACE0 /* AirlineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70633FD25FE3EAA0027ACE0 /* AirlineVC.swift */; };
+		F7621DE625FEB4F700D14782 /* TestHomeVMNoInbound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7621DE525FEB4F700D14782 /* TestHomeVMNoInbound.swift */; };
+		F7621DF125FEB7FC00D14782 /* TestHomeVMInbound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7621DF025FEB7FC00D14782 /* TestHomeVMInbound.swift */; };
 		F767825B25F3E1D30010C40C /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F767825A25F3E1D30010C40C /* UIView+Utils.swift */; };
 		F767826125F3E6AC0010C40C /* FakeSplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F767826025F3E6AC0010C40C /* FakeSplashVC.swift */; };
 		F767826925F3E6BD0010C40C /* FakeSplashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F767826825F3E6BD0010C40C /* FakeSplashVM.swift */; };
@@ -98,6 +100,8 @@
 		D2AB9CB759E3CC0A7A38E1AC /* Pods-TestSunWebTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSunWebTests.debug.xcconfig"; path = "Target Support Files/Pods-TestSunWebTests/Pods-TestSunWebTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F70633F525FE3E9F0027ACE0 /* AirlineVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineVM.swift; sourceTree = "<group>"; };
 		F70633FD25FE3EAA0027ACE0 /* AirlineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineVC.swift; sourceTree = "<group>"; };
+		F7621DE525FEB4F700D14782 /* TestHomeVMNoInbound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeVMNoInbound.swift; sourceTree = "<group>"; };
+		F7621DF025FEB7FC00D14782 /* TestHomeVMInbound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeVMInbound.swift; sourceTree = "<group>"; };
 		F767825A25F3E1D30010C40C /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		F767826025F3E6AC0010C40C /* FakeSplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSplashVC.swift; sourceTree = "<group>"; };
 		F767826825F3E6BD0010C40C /* FakeSplashVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSplashVM.swift; sourceTree = "<group>"; };
@@ -413,11 +417,13 @@
 			isa = PBXGroup;
 			children = (
 				F7D2E43A25F3DA9D00B39D3A /* Info.plist */,
+				F7E44CB225FCEED100E46098 /* TestFakeSplashVM.swift */,
 				F7D74D7325FBD813004F677A /* TestHomeVC.swift */,
 				F7EC12BD25FE327300AC28F7 /* TestHomeVM.swift */,
-				F7E44CB225FCEED100E46098 /* TestFakeSplashVM.swift */,
-				F7AA368325FE66A0002AAA3A /* TestAirlineVM.swift */,
+				F7621DF025FEB7FC00D14782 /* TestHomeVMInbound.swift */,
+				F7621DE525FEB4F700D14782 /* TestHomeVMNoInbound.swift */,
 				F7AA369725FE7673002AAA3A /* TestAirlineVC.swift */,
+				F7AA368325FE66A0002AAA3A /* TestAirlineVM.swift */,
 			);
 			path = TestSunWebTests;
 			sourceTree = "<group>";
@@ -913,8 +919,10 @@
 			files = (
 				F7AA369825FE7673002AAA3A /* TestAirlineVC.swift in Sources */,
 				F7E44CB325FCEED100E46098 /* TestFakeSplashVM.swift in Sources */,
+				F7621DF125FEB7FC00D14782 /* TestHomeVMInbound.swift in Sources */,
 				F7AA368425FE66A0002AAA3A /* TestAirlineVM.swift in Sources */,
 				F7EC12BE25FE327300AC28F7 /* TestHomeVM.swift in Sources */,
+				F7621DE625FEB4F700D14782 /* TestHomeVMNoInbound.swift in Sources */,
 				F7D74D7425FBD813004F677A /* TestHomeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

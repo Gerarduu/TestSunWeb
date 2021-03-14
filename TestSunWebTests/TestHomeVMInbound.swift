@@ -8,12 +8,9 @@
 import XCTest
 @testable import TestSunWeb
 
-class TestHomeVM: XCTestCase {
+class TestHomeVMInbound: XCTestCase {
     var sut: HomeVM!
-    var expectationOutboundFlight: XCTestExpectation?
     var expectationInboundFlight: XCTestExpectation?
-    var selectedOutboundFlight: [FlightObject]!
-    var selectedInboundFlight: [FlightObject]!
     
     override func setUp() {
         super.setUp()
@@ -30,10 +27,10 @@ class TestHomeVM: XCTestCase {
         return homeVM
     }
     
-    func test_select_outbound_flight() {
-        self.expectationOutboundFlight = expectation(description: "Select outbound flight")
-        if let outboundFlight = sut.outboundFlights?.first {
-            sut.selectOutboundFlight(outboundFlight: outboundFlight)
+    func test_select_inbound_flight() {
+        self.expectationInboundFlight = expectation(description: "Select inbound flight")
+        if let inboundFlight = sut.filteredInboundFlights?.first {
+            sut.selectInboundFlight(inboundFlight: inboundFlight)
             waitForExpectations(timeout: 5, handler: nil)
         } else {
             XCTFail()
@@ -41,18 +38,11 @@ class TestHomeVM: XCTestCase {
     }
 }
 
-extension TestHomeVM: HomeVMDelegate {
-    func didSelectOutboundFlight() {
-        if let outboundFlight = sut.outboundFlights?.first {
-            XCTAssertEqual(outboundFlight.checked, true)
-        } else {
-            XCTFail()
-        }
-    }
+extension TestHomeVMInbound: HomeVMDelegate {
+    func didSelectOutboundFlight() {}
     
     func didSelectInboundFlight() {
-        expectationOutboundFlight?.fulfill()
-        expectationOutboundFlight = nil
+        expectationInboundFlight?.fulfill()
         if let inboundFlight = sut.filteredInboundFlights?.first {
             XCTAssertEqual(inboundFlight.checked, true)
         } else {
