@@ -16,8 +16,11 @@ let kBaseURL = "https://api.mocki.io/"
 // MARK: - Path
 let kVersion = "/v1/"
 
+let kJsonFlights = "flights"
+let kJsonAirlines = "airlines"
+
 // MARK: - Endpoints
 
-let kFlights = ""
-let kAirlines = "/847569d7"
+let kFlights = "" /// To be integrated by the Back-End team.
+let kAirlines = "" /// To be integrated by the Back-End team.
 
