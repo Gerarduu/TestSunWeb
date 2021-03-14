@@ -1,4 +1,4 @@
-module Pods_TestSunWeb {
+framework module Pods_TestSunWeb {
   umbrella header "Pods-TestSunWeb-umbrella.h"
 
   export *
