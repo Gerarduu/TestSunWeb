@@ -165,6 +165,10 @@ User interface related constants.
 
 SunWeb's API related constants.
 
+## Core Data
+
+
+
 # Unit Tests
 
 ## TestFakeSplashVM 
