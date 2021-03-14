@@ -40,7 +40,6 @@ Father of all VCs, it contains common methods, that can be reusable, like "start
 
 This file acts like a splash screen, showing an activity indicator while it's ViewModel the data from the API.
 
-
 ## FakeSlashVM
 
 Loads the data from the API using concurrent API calls, and notifies the FakeSplashVC via protocol oriented programming, when the loading is done.
@@ -165,9 +164,55 @@ User interface related constants.
 
 SunWeb's API related constants.
 
-## Core Data
+## CoreData
 
+Core Data related constants.
 
+## PrefConstants
+
+UserDefaults' related constants.
+
+# Preferences
+
+## Preferences
+
+File wich contains the user's defalts. It only contains one user default in order to let the App know, if it's starting for the first time, or if it has already
+started.
+
+# Protocols
+
+## Transport
+
+Protocol used in order to have consistence between the Flight model and the Flight Object.
+
+# Managers
+
+## Flight Manager
+
+Class used to save, get and delete flights from the local storage.
+
+## Airline Manager
+
+Class used to save, get and delete airlines from the local storage.
+
+# Core Data
+
+## FlightObject+CoreDataClass
+
+File containing the definition of the FlightObject class
+
+## FlightObject+CoreDataProperties
+
+File containing all the attributes of the FlightObject class. It also contains an extension of this class called "Transport", in order to have consistence with this
+class and the Flights model. It also contains a fetchRequest method, in order to retriev the FlightObject objects from the local storage.
+
+## Airline+CoreDataClass
+
+File containing the definition of the AirlineObject class
+
+## Airline+CoreDataProperties
+
+File containing all the attributes of the Airline class and a fetchRequest method, in order to retrieve the AirlineObject objects from the local storage.
 
 # Unit Tests
 
