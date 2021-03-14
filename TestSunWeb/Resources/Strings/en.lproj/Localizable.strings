@@ -20,6 +20,7 @@
 // MARK: - Airline
 "airline.airlines" = " Airlines";
 "airline.n_d" = "N/D";
+"airline.close" = "Close";
 
 // MARK: - Toast
 
