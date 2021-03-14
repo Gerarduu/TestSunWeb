@@ -23,7 +23,17 @@ class TestAirlineVM: XCTestCase {
     }
     
     func makeSUT() -> AirlineVM {
-        let airlineVM = AirlineVM(delegate: self, id: "")
+        let airlineVM = AirlineVM(delegate: self, airlineId: "")
         return airlineVM
+    }
+}
+
+extension TestAirlineVM: AirlineVMDelegate {
+    func didLoadData() {
+        
+    }
+    
+    func error(error: Error) {
+        
     }
 }
