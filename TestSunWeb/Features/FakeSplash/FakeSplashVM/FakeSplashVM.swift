@@ -16,14 +16,41 @@ protocol FakeSplashVMDelegate: class {
 class FakeSplashVM {
     
     private weak var delegate: FakeSplashVMDelegate?
+    private var airlines = [Airline]()
     var outboundFlights = [Flight]()
     var inboundFlights = [Flight]()
+    
     
     init(delegate: FakeSplashVMDelegate) {
         self.delegate = delegate
     }
     
     func loadData() {
+        
+        let group = DispatchGroup()
+        
+        group.enter()
+        MockAPI.shared.requestMockObject(route: "airlines") { [weak self] (result: Result<AirlinesRoot,Error>) in
+            guard let `self` = self else {return}
+            switch result {
+            case .failure(let err):
+                self.delegate?.error(error: err)
+                return
+            case .success(let value):
+                guard let data = value.airlines else {
+                    self.delegate?.error(error: AppError.generic)
+                    return
+                }
+                self.airlines = data
+                AirlineManager.shared.deleteAirlines {
+                    AirlineManager.shared.saveAirlines(airlines: self.airlines) {
+                        group.leave()
+                    }
+                }
+            }
+        }
+        
+        group.enter()
         MockAPI.shared.requestMockObject(route: "flights") { [weak self] (result: Result<FlightsRoot,Error>) in
             guard let `self` = self else {return}
             switch result {
@@ -38,17 +65,21 @@ class FakeSplashVM {
                       inboundFlights.count > 0 else {
                     self.delegate?.error(error: AppError.generic)
                     return
+                    
+                    
                 }
-                
                 self.outboundFlights = outboundFlights
                 self.inboundFlights = inboundFlights
-                
-                self.compareData { (outboundFlightsToSave, inboundFlightsToSave, flightsToDelete) in
-                    for flight in flightsToDelete {
-                        FlightManager.shared.deleteFlight(id: flight)
-                    }
-                    self.saveData(outboundFlightsToSave, inboundFlightsToSave)
+            }
+            group.leave()
+        }
+        
+        group.notify(queue: .main) {
+            self.compareData { (outboundFlightsToSave, inboundFlightsToSave, flightsToDelete) in
+                for flight in flightsToDelete {
+                    FlightManager.shared.deleteFlight(id: flight)
                 }
+                self.saveData(outboundFlightsToSave, inboundFlightsToSave)
             }
         }
     }
