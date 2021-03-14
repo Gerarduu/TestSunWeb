@@ -100,7 +100,7 @@ class FakeSplashVM {
                 !apiTransportsIds.isSubset(of: savedTransportsIds) {
                 let diff = savedTransportsIds.symmetricDifference(apiTransportsIds)
                 for elem in diff {
-                    ///If the element is from the API, but it doesn't exist in the local storage, add it to the local storage.
+                    ///If the element exists in the API, but it doesn't exist in the local storage, add it to the local storage.
                     if !savedTransportsIds.contains(elem) && apiTransportsIds.contains(elem) {
                         if let flight = outboundFlights.filter({$0.transportId==elem}).first {
                             outboundFlightsToSave.append(flight)
@@ -117,6 +117,7 @@ class FakeSplashVM {
                 finish(outboundFlightsToSave, inboundFlightsToSave, flightsToDelete)
             }
         } else {
+            /// If we don't have any saved flights because we just started the app for the first time, save the flights from the API
             finish(self.outboundFlights, self.inboundFlights, flightsToDelete)
         }
     }

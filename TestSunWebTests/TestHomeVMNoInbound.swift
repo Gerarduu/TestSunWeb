@@ -30,8 +30,10 @@ class TestHomeVMNoInbound: XCTestCase {
     }
     
     func test_select_outbound_no_inbound() {
+        //Given
         self.expectationOutboundNoInbound = expectation(description: "Select outbound no inbound")
         if let outboundFlight = sut.outboundFlights.filter({ $0.arrivalAirportCode == "ROT" }).first {
+            //When
             sut.selectOutboundFlight(outboundFlight: outboundFlight)
             waitForExpectations(timeout: 5, handler: nil)
         } else {
@@ -46,6 +48,7 @@ extension TestHomeVMNoInbound: HomeVMDelegate {
     
     func couldntSelectInboundFlight() {
         expectationOutboundNoInbound?.fulfill()
+        //Then
         XCTAssertEqual(sut.filteredInboundFlights.count, 0)
     }
 }

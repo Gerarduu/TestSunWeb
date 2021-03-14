@@ -34,6 +34,7 @@ class TestFakeSplashVM: XCTestCase {
     
     // MARK: - Testing loading data from API, but there are more flights from the API than in the local storage.
     func test_load_data_more_flights_from_api() {
+        //Given
         for n in 0..<100 {
             self.sut.outboundFlights.append(Flight(id: n+200, airline: "MockAirline", departureAirportCode: "MOCKARR", arrivalAirportCode: "MOCKDEPT", price: 1.0))
             self.sut.inboundFlights.append(Flight(id: n+301, airline: "MockAirline", departureAirportCode: "MOCKARR", arrivalAirportCode: "MOCKDEPT", price: 1.0))
@@ -60,6 +61,7 @@ class TestFakeSplashVM: XCTestCase {
     func test_load_data_less_flights_from_api() {
         let expectation = self.expectation(description: "save flights")
         var flightsToSave = [Flight]()
+        //Given
         for n in 0..<100 {
             let flight = Flight(id: n+1000, airline: "MockAirline", departureAirportCode: "MOCKARR", arrivalAirportCode: "MOCKDEPT", price: 1.0)
             flightsToSave.append(flight)
@@ -80,6 +82,7 @@ class TestFakeSplashVM: XCTestCase {
     
     func test_load_airlines() {
         let expectation = self.expectation(description: "save airlines")
+        //Given
         MockAPI.shared.requestMockObject(route: "airlines") { (result: Result<AirlinesRoot,Error>) in
             switch result {
             case .failure:
@@ -98,7 +101,9 @@ class TestFakeSplashVM: XCTestCase {
             }
         }
         waitForExpectations(timeout: 5, handler: nil)
+        //When
         if let airline = AirlineManager.shared.getAirline(id: "Transavia") {
+            //Then
             XCTAssertEqual(airline.id, "Transavia")
             XCTAssertEqual(airline.name, "Transavia")
             XCTAssertEqual(airline.headline, "Want to fly affordably to more than 100 destinations in Europe? Book a flight with Transavia!")

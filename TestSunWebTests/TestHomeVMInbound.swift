@@ -28,8 +28,10 @@ class TestHomeVMInbound: XCTestCase {
     }
     
     func test_select_inbound_flight() {
+        //Given
         self.expectationInboundFlight = expectation(description: "Select inbound flight")
         if let inboundFlight = sut.filteredInboundFlights?.first {
+            //When
             sut.selectInboundFlight(inboundFlight: inboundFlight)
             waitForExpectations(timeout: 5, handler: nil)
         } else {
@@ -44,6 +46,7 @@ extension TestHomeVMInbound: HomeVMDelegate {
     func didSelectInboundFlight() {
         expectationInboundFlight?.fulfill()
         if let inboundFlight = sut.filteredInboundFlights?.first {
+            //Then
             XCTAssertEqual(inboundFlight.checked, true)
         } else {
             XCTFail()
