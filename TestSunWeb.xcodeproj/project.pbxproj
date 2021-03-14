@@ -1,0 +1,1285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8BA730D238FC24346A894B05 /* Pods_TestSunWeb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C654708B01C639EF64CE671 /* Pods_TestSunWeb.framework */; };
+		91E1D92F695A1FD5F4F1727C /* libPods-TestSunWebTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62AEC45FA2441AB50486F8F1 /* libPods-TestSunWebTests.a */; };
+		E80E04FBD7857E991F0EA668 /* libPods-TestSunWebUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3770A4FB78964234A814CD0D /* libPods-TestSunWebUITests.a */; };
+		F70633F625FE3E9F0027ACE0 /* AirlineVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70633F525FE3E9F0027ACE0 /* AirlineVM.swift */; };
+		F70633FE25FE3EAA0027ACE0 /* AirlineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70633FD25FE3EAA0027ACE0 /* AirlineVC.swift */; };
+		F7621DE625FEB4F700D14782 /* TestHomeVMNoInbound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7621DE525FEB4F700D14782 /* TestHomeVMNoInbound.swift */; };
+		F7621DF125FEB7FC00D14782 /* TestHomeVMInbound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7621DF025FEB7FC00D14782 /* TestHomeVMInbound.swift */; };
+		F767825B25F3E1D30010C40C /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F767825A25F3E1D30010C40C /* UIView+Utils.swift */; };
+		F767826125F3E6AC0010C40C /* FakeSplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F767826025F3E6AC0010C40C /* FakeSplashVC.swift */; };
+		F767826925F3E6BD0010C40C /* FakeSplashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F767826825F3E6BD0010C40C /* FakeSplashVM.swift */; };
+		F7741EA725F9499E0047E9D5 /* TransportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7741EA625F9499E0047E9D5 /* TransportProtocol.swift */; };
+		F7741EB325F95AEA0047E9D5 /* ToastVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7741EB225F95AEA0047E9D5 /* ToastVC.swift */; };
+		F7741EBB25F95B190047E9D5 /* Toast.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7741EBA25F95B190047E9D5 /* Toast.xib */; };
+		F7741ECB25F95DCA0047E9D5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7741ECD25F95DCA0047E9D5 /* Localizable.strings */; };
+		F7741ED325F95DF50047E9D5 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7741ED225F95DF50047E9D5 /* String+Utils.swift */; };
+		F79A5A7725F528F800252D88 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A5A7625F528F800252D88 /* CoreData.swift */; };
+		F79A5A7D25F52AFD00252D88 /* FlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A5A7C25F52AFD00252D88 /* FlightManager.swift */; };
+		F79EE4B025F80BD400E463EB /* FlightTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE4AF25F80BD400E463EB /* FlightTVC.swift */; };
+		F79EE4B525F80BDE00E463EB /* FlightTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F79EE4B425F80BDE00E463EB /* FlightTVC.xib */; };
+		F7AA368425FE66A0002AAA3A /* TestAirlineVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA368325FE66A0002AAA3A /* TestAirlineVM.swift */; };
+		F7AA369825FE7673002AAA3A /* TestAirlineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA369725FE7673002AAA3A /* TestAirlineVC.swift */; };
+		F7C2B9E325F4CAF200772E37 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C2B9E225F4CAF200772E37 /* APIClient.swift */; };
+		F7C2B9EB25F4CB0400772E37 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C2B9EA25F4CB0400772E37 /* APIRouter.swift */; };
+		F7C2B9F125F4CB3D00772E37 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C2B9F025F4CB3D00772E37 /* AppError.swift */; };
+		F7C2B9F925F4DE3400772E37 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C2B9F825F4DE3400772E37 /* API.swift */; };
+		F7C2B9FE25F4E66E00772E37 /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C2B9FD25F4E66E00772E37 /* MockAPI.swift */; };
+		F7C2BA0525F4ED2C00772E37 /* flights.json in Resources */ = {isa = PBXBuildFile; fileRef = F7C2BA0325F4ED2C00772E37 /* flights.json */; };
+		F7C2BA0625F4ED2C00772E37 /* airlines.json in Resources */ = {isa = PBXBuildFile; fileRef = F7C2BA0425F4ED2C00772E37 /* airlines.json */; };
+		F7C2BA0B25F4EDA000772E37 /* Flights.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C2BA0A25F4EDA000772E37 /* Flights.swift */; };
+		F7CA102825FE5E63006C93A3 /* DescriptionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CA102725FE5E63006C93A3 /* DescriptionTVC.swift */; };
+		F7CA102D25FE5E6D006C93A3 /* DescriptionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CA102C25FE5E6D006C93A3 /* DescriptionTVC.xib */; };
+		F7CC544525FE42B300D710A0 /* TopTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CC544425FE42B300D710A0 /* TopTVC.swift */; };
+		F7CC544D25FE42D700D710A0 /* TopTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CC544C25FE42D700D710A0 /* TopTVC.xib */; };
+		F7CC545225FE47CD00D710A0 /* AirlineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CC545125FE47CD00D710A0 /* AirlineManager.swift */; };
+		F7CC545825FE483100D710A0 /* AirlineObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CC545725FE483100D710A0 /* AirlineObject+CoreDataClass.swift */; };
+		F7CC545D25FE484100D710A0 /* AirlineObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CC545C25FE484100D710A0 /* AirlineObject+CoreDataProperties.swift */; };
+		F7CC546825FE5D8B00D710A0 /* HeaderTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CC546725FE5D8B00D710A0 /* HeaderTVC.swift */; };
+		F7CC547025FE5D9600D710A0 /* HeaderTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CC546F25FE5D9600D710A0 /* HeaderTVC.xib */; };
+		F7D2E41F25F3DA9A00B39D3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D2E41E25F3DA9A00B39D3A /* AppDelegate.swift */; };
+		F7D2E42325F3DA9A00B39D3A /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D2E42225F3DA9A00B39D3A /* BaseVC.swift */; };
+		F7D2E42625F3DA9A00B39D3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7D2E42425F3DA9A00B39D3A /* Main.storyboard */; };
+		F7D2E42925F3DA9A00B39D3A /* TestSunWeb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F7D2E42725F3DA9A00B39D3A /* TestSunWeb.xcdatamodeld */; };
+		F7D2E42B25F3DA9C00B39D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7D2E42A25F3DA9C00B39D3A /* Assets.xcassets */; };
+		F7D2E42E25F3DA9C00B39D3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7D2E42C25F3DA9C00B39D3A /* LaunchScreen.storyboard */; };
+		F7D2E44425F3DA9D00B39D3A /* TestSunWebUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D2E44325F3DA9D00B39D3A /* TestSunWebUITests.swift */; };
+		F7D2E47625F3DEE400B39D3A /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D2E47525F3DEE400B39D3A /* Navigation.swift */; };
+		F7D2E47B25F3DF2200B39D3A /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D2E47A25F3DF2200B39D3A /* UI.swift */; };
+		F7D2E48425F3DF8600B39D3A /* LoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D2E48325F3DF8600B39D3A /* LoadingVC.swift */; };
+		F7D2E48925F3DFB700B39D3A /* LoadingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7D2E48825F3DFB700B39D3A /* LoadingVC.xib */; };
+		F7D74D7425FBD813004F677A /* TestHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D74D7325FBD813004F677A /* TestHomeVC.swift */; };
+		F7E44CB325FCEED100E46098 /* TestFakeSplashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E44CB225FCEED100E46098 /* TestFakeSplashVM.swift */; };
+		F7E6FB4025F54075009EAF6C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E6FB3F25F54075009EAF6C /* HomeVC.swift */; };
+		F7E6FB4C25F54081009EAF6C /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E6FB4B25F54081009EAF6C /* HomeVM.swift */; };
+		F7E6FB5125F540AE009EAF6C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7E6FB5025F540AE009EAF6C /* Home.storyboard */; };
+		F7EB040D25F7FA88005A2901 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EB040C25F7FA88005A2901 /* Preferences.swift */; };
+		F7EB041225F7FAA1005A2901 /* PrefsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EB041125F7FAA1005A2901 /* PrefsConstants.swift */; };
+		F7EC12BE25FE327300AC28F7 /* TestHomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC12BD25FE327300AC28F7 /* TestHomeVM.swift */; };
+		F7FB751825FA9CAC0064924F /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB751725FA9CAC0064924F /* SectionHeader.swift */; };
+		F7FB751D25FA9CEC0064924F /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7FB751C25FA9CEC0064924F /* SectionHeader.xib */; };
+		F7FD555725F4F909002FBC9F /* Airlines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD555625F4F909002FBC9F /* Airlines.swift */; };
+		F7FD555D25F5281D002FBC9F /* FileObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD555C25F5281D002FBC9F /* FileObject+CoreDataClass.swift */; };
+		F7FD556825F52845002FBC9F /* FlightObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD556725F52845002FBC9F /* FlightObject+CoreDataProperties.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F7D2E43525F3DA9D00B39D3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7D2E41325F3DA9A00B39D3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7D2E41A25F3DA9A00B39D3A;
+			remoteInfo = TestSunWeb;
+		};
+		F7D2E44025F3DA9D00B39D3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7D2E41325F3DA9A00B39D3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7D2E41A25F3DA9A00B39D3A;
+			remoteInfo = TestSunWeb;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1710D77428E173F32A8E798C /* Pods-TestSunWebUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSunWebUITests.debug.xcconfig"; path = "Target Support Files/Pods-TestSunWebUITests/Pods-TestSunWebUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3770A4FB78964234A814CD0D /* libPods-TestSunWebUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestSunWebUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C0719281CD5FECC8363AC36 /* Pods-TestSunWebTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSunWebTests.release.xcconfig"; path = "Target Support Files/Pods-TestSunWebTests/Pods-TestSunWebTests.release.xcconfig"; sourceTree = "<group>"; };
+		3C654708B01C639EF64CE671 /* Pods_TestSunWeb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestSunWeb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62AEC45FA2441AB50486F8F1 /* libPods-TestSunWebTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestSunWebTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4E4A1BBDAD6094ECD8CF10E /* Pods-TestSunWeb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSunWeb.debug.xcconfig"; path = "Target Support Files/Pods-TestSunWeb/Pods-TestSunWeb.debug.xcconfig"; sourceTree = "<group>"; };
+		C1E2D532D34FCFC33CF3BE68 /* Pods-TestSunWebUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSunWebUITests.release.xcconfig"; path = "Target Support Files/Pods-TestSunWebUITests/Pods-TestSunWebUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C918AF6E768056B7929B4399 /* Pods-TestSunWeb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSunWeb.release.xcconfig"; path = "Target Support Files/Pods-TestSunWeb/Pods-TestSunWeb.release.xcconfig"; sourceTree = "<group>"; };
+		D2AB9CB759E3CC0A7A38E1AC /* Pods-TestSunWebTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSunWebTests.debug.xcconfig"; path = "Target Support Files/Pods-TestSunWebTests/Pods-TestSunWebTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F70633F525FE3E9F0027ACE0 /* AirlineVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineVM.swift; sourceTree = "<group>"; };
+		F70633FD25FE3EAA0027ACE0 /* AirlineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineVC.swift; sourceTree = "<group>"; };
+		F7621DE525FEB4F700D14782 /* TestHomeVMNoInbound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeVMNoInbound.swift; sourceTree = "<group>"; };
+		F7621DF025FEB7FC00D14782 /* TestHomeVMInbound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeVMInbound.swift; sourceTree = "<group>"; };
+		F767825A25F3E1D30010C40C /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		F767826025F3E6AC0010C40C /* FakeSplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSplashVC.swift; sourceTree = "<group>"; };
+		F767826825F3E6BD0010C40C /* FakeSplashVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSplashVM.swift; sourceTree = "<group>"; };
+		F7741EA625F9499E0047E9D5 /* TransportProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportProtocol.swift; sourceTree = "<group>"; };
+		F7741EB225F95AEA0047E9D5 /* ToastVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastVC.swift; sourceTree = "<group>"; };
+		F7741EBA25F95B190047E9D5 /* Toast.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Toast.xib; sourceTree = "<group>"; };
+		F7741ECC25F95DCA0047E9D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F7741ED225F95DF50047E9D5 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		F79A5A7625F528F800252D88 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		F79A5A7C25F52AFD00252D88 /* FlightManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightManager.swift; sourceTree = "<group>"; };
+		F79EE4AF25F80BD400E463EB /* FlightTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTVC.swift; sourceTree = "<group>"; };
+		F79EE4B425F80BDE00E463EB /* FlightTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightTVC.xib; sourceTree = "<group>"; };
+		F7AA368325FE66A0002AAA3A /* TestAirlineVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAirlineVM.swift; sourceTree = "<group>"; };
+		F7AA369725FE7673002AAA3A /* TestAirlineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAirlineVC.swift; sourceTree = "<group>"; };
+		F7C2B9E225F4CAF200772E37 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		F7C2B9EA25F4CB0400772E37 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		F7C2B9F025F4CB3D00772E37 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		F7C2B9F825F4DE3400772E37 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		F7C2B9FD25F4E66E00772E37 /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
+		F7C2BA0325F4ED2C00772E37 /* flights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flights.json; sourceTree = "<group>"; };
+		F7C2BA0425F4ED2C00772E37 /* airlines.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airlines.json; sourceTree = "<group>"; };
+		F7C2BA0A25F4EDA000772E37 /* Flights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flights.swift; sourceTree = "<group>"; };
+		F7CA102725FE5E63006C93A3 /* DescriptionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTVC.swift; sourceTree = "<group>"; };
+		F7CA102C25FE5E6D006C93A3 /* DescriptionTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionTVC.xib; sourceTree = "<group>"; };
+		F7CC544425FE42B300D710A0 /* TopTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTVC.swift; sourceTree = "<group>"; };
+		F7CC544C25FE42D700D710A0 /* TopTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopTVC.xib; sourceTree = "<group>"; };
+		F7CC545125FE47CD00D710A0 /* AirlineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineManager.swift; sourceTree = "<group>"; };
+		F7CC545725FE483100D710A0 /* AirlineObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AirlineObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F7CC545C25FE484100D710A0 /* AirlineObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AirlineObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F7CC546725FE5D8B00D710A0 /* HeaderTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTVC.swift; sourceTree = "<group>"; };
+		F7CC546F25FE5D9600D710A0 /* HeaderTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTVC.xib; sourceTree = "<group>"; };
+		F7D2E41B25F3DA9A00B39D3A /* TestSunWeb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSunWeb.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7D2E41E25F3DA9A00B39D3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F7D2E42225F3DA9A00B39D3A /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		F7D2E42525F3DA9A00B39D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F7D2E42825F3DA9A00B39D3A /* TestSunWeb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestSunWeb.xcdatamodel; sourceTree = "<group>"; };
+		F7D2E42A25F3DA9C00B39D3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7D2E42D25F3DA9C00B39D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F7D2E42F25F3DA9C00B39D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7D2E43425F3DA9D00B39D3A /* TestSunWebTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestSunWebTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7D2E43A25F3DA9D00B39D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7D2E43F25F3DA9D00B39D3A /* TestSunWebUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestSunWebUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7D2E44325F3DA9D00B39D3A /* TestSunWebUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSunWebUITests.swift; sourceTree = "<group>"; };
+		F7D2E44525F3DA9D00B39D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7D2E47525F3DEE400B39D3A /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		F7D2E47A25F3DF2200B39D3A /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		F7D2E48325F3DF8600B39D3A /* LoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingVC.swift; sourceTree = "<group>"; };
+		F7D2E48825F3DFB700B39D3A /* LoadingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingVC.xib; sourceTree = "<group>"; };
+		F7D74D7325FBD813004F677A /* TestHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeVC.swift; sourceTree = "<group>"; };
+		F7E44CB225FCEED100E46098 /* TestFakeSplashVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFakeSplashVM.swift; sourceTree = "<group>"; };
+		F7E6FB3F25F54075009EAF6C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		F7E6FB4B25F54081009EAF6C /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		F7E6FB5025F540AE009EAF6C /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		F7EB040C25F7FA88005A2901 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		F7EB041125F7FAA1005A2901 /* PrefsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsConstants.swift; sourceTree = "<group>"; };
+		F7EC12BD25FE327300AC28F7 /* TestHomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeVM.swift; sourceTree = "<group>"; };
+		F7FB751725FA9CAC0064924F /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		F7FB751C25FA9CEC0064924F /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
+		F7FD555625F4F909002FBC9F /* Airlines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airlines.swift; sourceTree = "<group>"; };
+		F7FD555C25F5281D002FBC9F /* FileObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F7FD556725F52845002FBC9F /* FlightObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlightObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7D2E41825F3DA9A00B39D3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BA730D238FC24346A894B05 /* Pods_TestSunWeb.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7D2E43125F3DA9D00B39D3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91E1D92F695A1FD5F4F1727C /* libPods-TestSunWebTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7D2E43C25F3DA9D00B39D3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E80E04FBD7857E991F0EA668 /* libPods-TestSunWebUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		44FA73AF3032B7E27ACD87CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4E4A1BBDAD6094ECD8CF10E /* Pods-TestSunWeb.debug.xcconfig */,
+				C918AF6E768056B7929B4399 /* Pods-TestSunWeb.release.xcconfig */,
+				D2AB9CB759E3CC0A7A38E1AC /* Pods-TestSunWebTests.debug.xcconfig */,
+				3C0719281CD5FECC8363AC36 /* Pods-TestSunWebTests.release.xcconfig */,
+				1710D77428E173F32A8E798C /* Pods-TestSunWebUITests.debug.xcconfig */,
+				C1E2D532D34FCFC33CF3BE68 /* Pods-TestSunWebUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		646482FF709019B16F7E825A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C654708B01C639EF64CE671 /* Pods_TestSunWeb.framework */,
+				62AEC45FA2441AB50486F8F1 /* libPods-TestSunWebTests.a */,
+				3770A4FB78964234A814CD0D /* libPods-TestSunWebUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F70633F225FE3E880027ACE0 /* Airline */ = {
+			isa = PBXGroup;
+			children = (
+				F70633F425FE3E930027ACE0 /* AirlineVM */,
+				F70633F325FE3E8E0027ACE0 /* AirlineVC */,
+			);
+			path = Airline;
+			sourceTree = "<group>";
+		};
+		F70633F325FE3E8E0027ACE0 /* AirlineVC */ = {
+			isa = PBXGroup;
+			children = (
+				F70633FD25FE3EAA0027ACE0 /* AirlineVC.swift */,
+			);
+			path = AirlineVC;
+			sourceTree = "<group>";
+		};
+		F70633F425FE3E930027ACE0 /* AirlineVM */ = {
+			isa = PBXGroup;
+			children = (
+				F70633F525FE3E9F0027ACE0 /* AirlineVM.swift */,
+			);
+			path = AirlineVM;
+			sourceTree = "<group>";
+		};
+		F763AC1D25FA9BE9001A2776 /* FlightTVC */ = {
+			isa = PBXGroup;
+			children = (
+				F79EE4AF25F80BD400E463EB /* FlightTVC.swift */,
+				F79EE4B425F80BDE00E463EB /* FlightTVC.xib */,
+			);
+			path = FlightTVC;
+			sourceTree = "<group>";
+		};
+		F763AC1E25FA9BF5001A2776 /* SectionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				F7FB751725FA9CAC0064924F /* SectionHeader.swift */,
+				F7FB751C25FA9CEC0064924F /* SectionHeader.xib */,
+			);
+			path = SectionHeader;
+			sourceTree = "<group>";
+		};
+		F767825F25F3E69C0010C40C /* FakeSplash */ = {
+			isa = PBXGroup;
+			children = (
+				F767826E25F3E6CB0010C40C /* FakeSplashVM */,
+				F767826D25F3E6C20010C40C /* FakeSplashVC */,
+			);
+			path = FakeSplash;
+			sourceTree = "<group>";
+		};
+		F767826D25F3E6C20010C40C /* FakeSplashVC */ = {
+			isa = PBXGroup;
+			children = (
+				F767826025F3E6AC0010C40C /* FakeSplashVC.swift */,
+			);
+			path = FakeSplashVC;
+			sourceTree = "<group>";
+		};
+		F767826E25F3E6CB0010C40C /* FakeSplashVM */ = {
+			isa = PBXGroup;
+			children = (
+				F767826825F3E6BD0010C40C /* FakeSplashVM.swift */,
+			);
+			path = FakeSplashVM;
+			sourceTree = "<group>";
+		};
+		F7741EA525F9498B0047E9D5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F7741EA625F9499E0047E9D5 /* TransportProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F7741EB125F95AD90047E9D5 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				F7741EB225F95AEA0047E9D5 /* ToastVC.swift */,
+				F7741EBA25F95B190047E9D5 /* Toast.xib */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		F7741EC225F95DBD0047E9D5 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				F7741ECD25F95DCA0047E9D5 /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		F79A5A7B25F52AF300252D88 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F79A5A7C25F52AFD00252D88 /* FlightManager.swift */,
+				F7CC545125FE47CD00D710A0 /* AirlineManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F7C2B9EF25F4CB3300772E37 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				F7C2B9F025F4CB3D00772E37 /* AppError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		F7C2BA0225F4EBE400772E37 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				F7C2BA0325F4ED2C00772E37 /* flights.json */,
+				F7C2BA0425F4ED2C00772E37 /* airlines.json */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		F7CA102625FE5E55006C93A3 /* DescriptionTVC */ = {
+			isa = PBXGroup;
+			children = (
+				F7CA102C25FE5E6D006C93A3 /* DescriptionTVC.xib */,
+				F7CA102725FE5E63006C93A3 /* DescriptionTVC.swift */,
+			);
+			path = DescriptionTVC;
+			sourceTree = "<group>";
+		};
+		F7CC544325FE42A400D710A0 /* TopTVC */ = {
+			isa = PBXGroup;
+			children = (
+				F7CC544425FE42B300D710A0 /* TopTVC.swift */,
+				F7CC544C25FE42D700D710A0 /* TopTVC.xib */,
+			);
+			path = TopTVC;
+			sourceTree = "<group>";
+		};
+		F7CC545625FE481900D710A0 /* AirlineObj */ = {
+			isa = PBXGroup;
+			children = (
+				F7CC545725FE483100D710A0 /* AirlineObject+CoreDataClass.swift */,
+				F7CC545C25FE484100D710A0 /* AirlineObject+CoreDataProperties.swift */,
+			);
+			path = AirlineObj;
+			sourceTree = "<group>";
+		};
+		F7CC546625FE5D7900D710A0 /* HeaderTVC */ = {
+			isa = PBXGroup;
+			children = (
+				F7CC546725FE5D8B00D710A0 /* HeaderTVC.swift */,
+				F7CC546F25FE5D9600D710A0 /* HeaderTVC.xib */,
+			);
+			path = HeaderTVC;
+			sourceTree = "<group>";
+		};
+		F7D2E41225F3DA9A00B39D3A = {
+			isa = PBXGroup;
+			children = (
+				F7D2E41D25F3DA9A00B39D3A /* TestSunWeb */,
+				F7D2E43725F3DA9D00B39D3A /* TestSunWebTests */,
+				F7D2E44225F3DA9D00B39D3A /* TestSunWebUITests */,
+				F7D2E41C25F3DA9A00B39D3A /* Products */,
+				44FA73AF3032B7E27ACD87CC /* Pods */,
+				646482FF709019B16F7E825A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F7D2E41C25F3DA9A00B39D3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7D2E41B25F3DA9A00B39D3A /* TestSunWeb.app */,
+				F7D2E43425F3DA9D00B39D3A /* TestSunWebTests.xctest */,
+				F7D2E43F25F3DA9D00B39D3A /* TestSunWebUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7D2E41D25F3DA9A00B39D3A /* TestSunWeb */ = {
+			isa = PBXGroup;
+			children = (
+				F79A5A7B25F52AF300252D88 /* Managers */,
+				F7D2E45E25F3DDA100B39D3A /* Application */,
+				F7D2E45F25F3DDAB00B39D3A /* Commons */,
+				F7D2E46625F3DDD300B39D3A /* Constants */,
+				F7D2E46525F3DDCE00B39D3A /* Features */,
+				F7D2E46425F3DDCA00B39D3A /* Helpers */,
+				F7D2E46325F3DDC600B39D3A /* Models */,
+				F7741EA525F9498B0047E9D5 /* Protocols */,
+				F7EB040B25F7FA7B005A2901 /* Preferences */,
+				F7D2E46225F3DDC100B39D3A /* Utils */,
+				F7D2E46125F3DDBC00B39D3A /* Service */,
+				F7D2E47225F3DE3900B39D3A /* CoreData */,
+				F7D2E46025F3DDB600B39D3A /* Resources */,
+			);
+			path = TestSunWeb;
+			sourceTree = "<group>";
+		};
+		F7D2E43725F3DA9D00B39D3A /* TestSunWebTests */ = {
+			isa = PBXGroup;
+			children = (
+				F7D2E43A25F3DA9D00B39D3A /* Info.plist */,
+				F7E44CB225FCEED100E46098 /* TestFakeSplashVM.swift */,
+				F7D74D7325FBD813004F677A /* TestHomeVC.swift */,
+				F7EC12BD25FE327300AC28F7 /* TestHomeVM.swift */,
+				F7621DF025FEB7FC00D14782 /* TestHomeVMInbound.swift */,
+				F7621DE525FEB4F700D14782 /* TestHomeVMNoInbound.swift */,
+				F7AA369725FE7673002AAA3A /* TestAirlineVC.swift */,
+				F7AA368325FE66A0002AAA3A /* TestAirlineVM.swift */,
+			);
+			path = TestSunWebTests;
+			sourceTree = "<group>";
+		};
+		F7D2E44225F3DA9D00B39D3A /* TestSunWebUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F7D2E44325F3DA9D00B39D3A /* TestSunWebUITests.swift */,
+				F7D2E44525F3DA9D00B39D3A /* Info.plist */,
+			);
+			path = TestSunWebUITests;
+			sourceTree = "<group>";
+		};
+		F7D2E45E25F3DDA100B39D3A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F7D2E41E25F3DA9A00B39D3A /* AppDelegate.swift */,
+				F7D2E42F25F3DA9C00B39D3A /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F7D2E45F25F3DDAB00B39D3A /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				F7D2E48225F3DF7C00B39D3A /* LoadingVC */,
+				F7D2E47425F3DED500B39D3A /* Navigation */,
+				F7D2E46E25F3DDF500B39D3A /* Base */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		F7D2E46025F3DDB600B39D3A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F7741EC225F95DBD0047E9D5 /* Strings */,
+				F7D2E42A25F3DA9C00B39D3A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F7D2E46125F3DDBC00B39D3A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F7C2BA0225F4EBE400772E37 /* MockData */,
+				F7C2B9E225F4CAF200772E37 /* APIClient.swift */,
+				F7C2B9EA25F4CB0400772E37 /* APIRouter.swift */,
+				F7C2B9FD25F4E66E00772E37 /* MockAPI.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F7D2E46225F3DDC100B39D3A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F767825A25F3E1D30010C40C /* UIView+Utils.swift */,
+				F7741ED225F95DF50047E9D5 /* String+Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F7D2E46325F3DDC600B39D3A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F7C2BA0A25F4EDA000772E37 /* Flights.swift */,
+				F7FD555625F4F909002FBC9F /* Airlines.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F7D2E46425F3DDCA00B39D3A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F7C2B9EF25F4CB3300772E37 /* Enums */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F7D2E46525F3DDCE00B39D3A /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				F70633F225FE3E880027ACE0 /* Airline */,
+				F7E6FB3C25F54060009EAF6C /* Home */,
+				F767825F25F3E69C0010C40C /* FakeSplash */,
+				F7D2E46F25F3DE0B00B39D3A /* Views */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		F7D2E46625F3DDD300B39D3A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F7D2E47A25F3DF2200B39D3A /* UI.swift */,
+				F7C2B9F825F4DE3400772E37 /* API.swift */,
+				F79A5A7625F528F800252D88 /* CoreData.swift */,
+				F7EB041125F7FAA1005A2901 /* PrefsConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		F7D2E46E25F3DDF500B39D3A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F7D2E42225F3DA9A00B39D3A /* BaseVC.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F7D2E46F25F3DE0B00B39D3A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F7D2E47125F3DE1500B39D3A /* Reusable */,
+				F7D2E47025F3DE0F00B39D3A /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F7D2E47025F3DE0F00B39D3A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F7D2E42C25F3DA9C00B39D3A /* LaunchScreen.storyboard */,
+				F7D2E42425F3DA9A00B39D3A /* Main.storyboard */,
+				F7E6FB5025F540AE009EAF6C /* Home.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F7D2E47125F3DE1500B39D3A /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				F7741EB125F95AD90047E9D5 /* Toast */,
+				F7CA102625FE5E55006C93A3 /* DescriptionTVC */,
+				F7CC546625FE5D7900D710A0 /* HeaderTVC */,
+				F7CC544325FE42A400D710A0 /* TopTVC */,
+				F763AC1E25FA9BF5001A2776 /* SectionHeader */,
+				F763AC1D25FA9BE9001A2776 /* FlightTVC */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		F7D2E47225F3DE3900B39D3A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F7CC545625FE481900D710A0 /* AirlineObj */,
+				F7FD555B25F5280B002FBC9F /* FlightObj */,
+				F7D2E47325F3DE4E00B39D3A /* DataModel */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F7D2E47325F3DE4E00B39D3A /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				F7D2E42725F3DA9A00B39D3A /* TestSunWeb.xcdatamodeld */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		F7D2E47425F3DED500B39D3A /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				F7D2E47525F3DEE400B39D3A /* Navigation.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		F7D2E48225F3DF7C00B39D3A /* LoadingVC */ = {
+			isa = PBXGroup;
+			children = (
+				F7D2E48325F3DF8600B39D3A /* LoadingVC.swift */,
+				F7D2E48825F3DFB700B39D3A /* LoadingVC.xib */,
+			);
+			path = LoadingVC;
+			sourceTree = "<group>";
+		};
+		F7E6FB3C25F54060009EAF6C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F7E6FB3E25F5406A009EAF6C /* HomeVM */,
+				F7E6FB3D25F54065009EAF6C /* HomeVC */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F7E6FB3D25F54065009EAF6C /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				F7E6FB3F25F54075009EAF6C /* HomeVC.swift */,
+			);
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		F7E6FB3E25F5406A009EAF6C /* HomeVM */ = {
+			isa = PBXGroup;
+			children = (
+				F7E6FB4B25F54081009EAF6C /* HomeVM.swift */,
+			);
+			path = HomeVM;
+			sourceTree = "<group>";
+		};
+		F7EB040B25F7FA7B005A2901 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				F7EB040C25F7FA88005A2901 /* Preferences.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		F7FD555B25F5280B002FBC9F /* FlightObj */ = {
+			isa = PBXGroup;
+			children = (
+				F7FD555C25F5281D002FBC9F /* FileObject+CoreDataClass.swift */,
+				F7FD556725F52845002FBC9F /* FlightObject+CoreDataProperties.swift */,
+			);
+			path = FlightObj;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7D2E41A25F3DA9A00B39D3A /* TestSunWeb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7D2E44825F3DA9D00B39D3A /* Build configuration list for PBXNativeTarget "TestSunWeb" */;
+			buildPhases = (
+				388575B5057058F5DC17B44A /* [CP] Check Pods Manifest.lock */,
+				F7D2E41725F3DA9A00B39D3A /* Sources */,
+				F7D2E41825F3DA9A00B39D3A /* Frameworks */,
+				F7D2E41925F3DA9A00B39D3A /* Resources */,
+				E93386CE0330BE34BC5E0E74 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestSunWeb;
+			productName = TestSunWeb;
+			productReference = F7D2E41B25F3DA9A00B39D3A /* TestSunWeb.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F7D2E43325F3DA9D00B39D3A /* TestSunWebTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7D2E44B25F3DA9D00B39D3A /* Build configuration list for PBXNativeTarget "TestSunWebTests" */;
+			buildPhases = (
+				FF92C70D2AC821993D95B4A0 /* [CP] Check Pods Manifest.lock */,
+				F7D2E43025F3DA9D00B39D3A /* Sources */,
+				F7D2E43125F3DA9D00B39D3A /* Frameworks */,
+				F7D2E43225F3DA9D00B39D3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7D2E43625F3DA9D00B39D3A /* PBXTargetDependency */,
+			);
+			name = TestSunWebTests;
+			productName = TestSunWebTests;
+			productReference = F7D2E43425F3DA9D00B39D3A /* TestSunWebTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F7D2E43E25F3DA9D00B39D3A /* TestSunWebUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7D2E44E25F3DA9D00B39D3A /* Build configuration list for PBXNativeTarget "TestSunWebUITests" */;
+			buildPhases = (
+				33E3FEAEF76CD55ED74897EE /* [CP] Check Pods Manifest.lock */,
+				F7D2E43B25F3DA9D00B39D3A /* Sources */,
+				F7D2E43C25F3DA9D00B39D3A /* Frameworks */,
+				F7D2E43D25F3DA9D00B39D3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7D2E44125F3DA9D00B39D3A /* PBXTargetDependency */,
+			);
+			name = TestSunWebUITests;
+			productName = TestSunWebUITests;
+			productReference = F7D2E43F25F3DA9D00B39D3A /* TestSunWebUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7D2E41325F3DA9A00B39D3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					F7D2E41A25F3DA9A00B39D3A = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					F7D2E43325F3DA9D00B39D3A = {
+						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
+						TestTargetID = F7D2E41A25F3DA9A00B39D3A;
+					};
+					F7D2E43E25F3DA9D00B39D3A = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = F7D2E41A25F3DA9A00B39D3A;
+					};
+				};
+			};
+			buildConfigurationList = F7D2E41625F3DA9A00B39D3A /* Build configuration list for PBXProject "TestSunWeb" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F7D2E41225F3DA9A00B39D3A;
+			productRefGroup = F7D2E41C25F3DA9A00B39D3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7D2E41A25F3DA9A00B39D3A /* TestSunWeb */,
+				F7D2E43325F3DA9D00B39D3A /* TestSunWebTests */,
+				F7D2E43E25F3DA9D00B39D3A /* TestSunWebUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F7D2E41925F3DA9A00B39D3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7E6FB5125F540AE009EAF6C /* Home.storyboard in Resources */,
+				F79EE4B525F80BDE00E463EB /* FlightTVC.xib in Resources */,
+				F7C2BA0525F4ED2C00772E37 /* flights.json in Resources */,
+				F7CC544D25FE42D700D710A0 /* TopTVC.xib in Resources */,
+				F7CC547025FE5D9600D710A0 /* HeaderTVC.xib in Resources */,
+				F7D2E48925F3DFB700B39D3A /* LoadingVC.xib in Resources */,
+				F7CA102D25FE5E6D006C93A3 /* DescriptionTVC.xib in Resources */,
+				F7741ECB25F95DCA0047E9D5 /* Localizable.strings in Resources */,
+				F7D2E42E25F3DA9C00B39D3A /* LaunchScreen.storyboard in Resources */,
+				F7FB751D25FA9CEC0064924F /* SectionHeader.xib in Resources */,
+				F7D2E42B25F3DA9C00B39D3A /* Assets.xcassets in Resources */,
+				F7C2BA0625F4ED2C00772E37 /* airlines.json in Resources */,
+				F7741EBB25F95B190047E9D5 /* Toast.xib in Resources */,
+				F7D2E42625F3DA9A00B39D3A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7D2E43225F3DA9D00B39D3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7D2E43D25F3DA9D00B39D3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33E3FEAEF76CD55ED74897EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestSunWebUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		388575B5057058F5DC17B44A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestSunWeb-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E93386CE0330BE34BC5E0E74 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestSunWeb/Pods-TestSunWeb-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestSunWeb/Pods-TestSunWeb-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestSunWeb/Pods-TestSunWeb-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF92C70D2AC821993D95B4A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestSunWebTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7D2E41725F3DA9A00B39D3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7FD555725F4F909002FBC9F /* Airlines.swift in Sources */,
+				F7741EA725F9499E0047E9D5 /* TransportProtocol.swift in Sources */,
+				F7E6FB4C25F54081009EAF6C /* HomeVM.swift in Sources */,
+				F767826125F3E6AC0010C40C /* FakeSplashVC.swift in Sources */,
+				F767826925F3E6BD0010C40C /* FakeSplashVM.swift in Sources */,
+				F79A5A7D25F52AFD00252D88 /* FlightManager.swift in Sources */,
+				F7C2BA0B25F4EDA000772E37 /* Flights.swift in Sources */,
+				F7CC544525FE42B300D710A0 /* TopTVC.swift in Sources */,
+				F7CC545225FE47CD00D710A0 /* AirlineManager.swift in Sources */,
+				F7D2E42325F3DA9A00B39D3A /* BaseVC.swift in Sources */,
+				F70633FE25FE3EAA0027ACE0 /* AirlineVC.swift in Sources */,
+				F7FB751825FA9CAC0064924F /* SectionHeader.swift in Sources */,
+				F7FD555D25F5281D002FBC9F /* FileObject+CoreDataClass.swift in Sources */,
+				F7D2E41F25F3DA9A00B39D3A /* AppDelegate.swift in Sources */,
+				F767825B25F3E1D30010C40C /* UIView+Utils.swift in Sources */,
+				F79EE4B025F80BD400E463EB /* FlightTVC.swift in Sources */,
+				F7741ED325F95DF50047E9D5 /* String+Utils.swift in Sources */,
+				F7EB040D25F7FA88005A2901 /* Preferences.swift in Sources */,
+				F79A5A7725F528F800252D88 /* CoreData.swift in Sources */,
+				F7CA102825FE5E63006C93A3 /* DescriptionTVC.swift in Sources */,
+				F7D2E42925F3DA9A00B39D3A /* TestSunWeb.xcdatamodeld in Sources */,
+				F7CC546825FE5D8B00D710A0 /* HeaderTVC.swift in Sources */,
+				F7C2B9E325F4CAF200772E37 /* APIClient.swift in Sources */,
+				F7741EB325F95AEA0047E9D5 /* ToastVC.swift in Sources */,
+				F7C2B9EB25F4CB0400772E37 /* APIRouter.swift in Sources */,
+				F7C2B9F925F4DE3400772E37 /* API.swift in Sources */,
+				F7C2B9F125F4CB3D00772E37 /* AppError.swift in Sources */,
+				F7CC545825FE483100D710A0 /* AirlineObject+CoreDataClass.swift in Sources */,
+				F7E6FB4025F54075009EAF6C /* HomeVC.swift in Sources */,
+				F7C2B9FE25F4E66E00772E37 /* MockAPI.swift in Sources */,
+				F7CC545D25FE484100D710A0 /* AirlineObject+CoreDataProperties.swift in Sources */,
+				F7D2E47625F3DEE400B39D3A /* Navigation.swift in Sources */,
+				F70633F625FE3E9F0027ACE0 /* AirlineVM.swift in Sources */,
+				F7EB041225F7FAA1005A2901 /* PrefsConstants.swift in Sources */,
+				F7D2E47B25F3DF2200B39D3A /* UI.swift in Sources */,
+				F7FD556825F52845002FBC9F /* FlightObject+CoreDataProperties.swift in Sources */,
+				F7D2E48425F3DF8600B39D3A /* LoadingVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7D2E43025F3DA9D00B39D3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7AA369825FE7673002AAA3A /* TestAirlineVC.swift in Sources */,
+				F7E44CB325FCEED100E46098 /* TestFakeSplashVM.swift in Sources */,
+				F7621DF125FEB7FC00D14782 /* TestHomeVMInbound.swift in Sources */,
+				F7AA368425FE66A0002AAA3A /* TestAirlineVM.swift in Sources */,
+				F7EC12BE25FE327300AC28F7 /* TestHomeVM.swift in Sources */,
+				F7621DE625FEB4F700D14782 /* TestHomeVMNoInbound.swift in Sources */,
+				F7D74D7425FBD813004F677A /* TestHomeVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7D2E43B25F3DA9D00B39D3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7D2E44425F3DA9D00B39D3A /* TestSunWebUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F7D2E43625F3DA9D00B39D3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7D2E41A25F3DA9A00B39D3A /* TestSunWeb */;
+			targetProxy = F7D2E43525F3DA9D00B39D3A /* PBXContainerItemProxy */;
+		};
+		F7D2E44125F3DA9D00B39D3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7D2E41A25F3DA9A00B39D3A /* TestSunWeb */;
+			targetProxy = F7D2E44025F3DA9D00B39D3A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F7741ECD25F95DCA0047E9D5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7741ECC25F95DCA0047E9D5 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		F7D2E42425F3DA9A00B39D3A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7D2E42525F3DA9A00B39D3A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F7D2E42C25F3DA9C00B39D3A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7D2E42D25F3DA9C00B39D3A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F7D2E44625F3DA9D00B39D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F7D2E44725F3DA9D00B39D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F7D2E44925F3DA9D00B39D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4E4A1BBDAD6094ECD8CF10E /* Pods-TestSunWeb.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H4UJ4PQ6L8;
+				INFOPLIST_FILE = TestSunWeb/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunweb.TestSunWeb;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F7D2E44A25F3DA9D00B39D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C918AF6E768056B7929B4399 /* Pods-TestSunWeb.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H4UJ4PQ6L8;
+				INFOPLIST_FILE = TestSunWeb/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunweb.TestSunWeb;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		F7D2E44C25F3DA9D00B39D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2AB9CB759E3CC0A7A38E1AC /* Pods-TestSunWebTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H4UJ4PQ6L8;
+				INFOPLIST_FILE = TestSunWebTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunweb.TestSunWebTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestSunWeb.app/TestSunWeb";
+			};
+			name = Debug;
+		};
+		F7D2E44D25F3DA9D00B39D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C0719281CD5FECC8363AC36 /* Pods-TestSunWebTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H4UJ4PQ6L8;
+				INFOPLIST_FILE = TestSunWebTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunweb.TestSunWebTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestSunWeb.app/TestSunWeb";
+			};
+			name = Release;
+		};
+		F7D2E44F25F3DA9D00B39D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1710D77428E173F32A8E798C /* Pods-TestSunWebUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H4UJ4PQ6L8;
+				INFOPLIST_FILE = TestSunWebUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunweb.TestSunWebUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TestSunWeb;
+			};
+			name = Debug;
+		};
+		F7D2E45025F3DA9D00B39D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1E2D532D34FCFC33CF3BE68 /* Pods-TestSunWebUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H4UJ4PQ6L8;
+				INFOPLIST_FILE = TestSunWebUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunweb.TestSunWebUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TestSunWeb;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7D2E41625F3DA9A00B39D3A /* Build configuration list for PBXProject "TestSunWeb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7D2E44625F3DA9D00B39D3A /* Debug */,
+				F7D2E44725F3DA9D00B39D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7D2E44825F3DA9D00B39D3A /* Build configuration list for PBXNativeTarget "TestSunWeb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7D2E44925F3DA9D00B39D3A /* Debug */,
+				F7D2E44A25F3DA9D00B39D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7D2E44B25F3DA9D00B39D3A /* Build configuration list for PBXNativeTarget "TestSunWebTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7D2E44C25F3DA9D00B39D3A /* Debug */,
+				F7D2E44D25F3DA9D00B39D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7D2E44E25F3DA9D00B39D3A /* Build configuration list for PBXNativeTarget "TestSunWebUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7D2E44F25F3DA9D00B39D3A /* Debug */,
+				F7D2E45025F3DA9D00B39D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F7D2E42725F3DA9A00B39D3A /* TestSunWeb.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F7D2E42825F3DA9A00B39D3A /* TestSunWeb.xcdatamodel */,
+			);
+			currentVersion = F7D2E42825F3DA9A00B39D3A /* TestSunWeb.xcdatamodel */;
+			path = TestSunWeb.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F7D2E41325F3DA9A00B39D3A /* Project object */;
+}
