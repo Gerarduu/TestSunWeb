@@ -83,7 +83,7 @@ class AirlineVC: BaseVC {
         return UITableViewCell()
     }
     
-    func cellForDescirption(at indexPath: IndexPath) -> UITableViewCell {
+    func cellForDescription(at indexPath: IndexPath) -> UITableViewCell {
         if let cell = mainTV.dequeueReusableCell(withIdentifier: kDescriptionTVC) as? DescriptionTVC {
             guard let description = self.airlineVM.description else { return UITableViewCell() }
             cell.selectionStyle = .none
@@ -111,7 +111,7 @@ extension AirlineVC: UITableViewDelegate, UITableViewDataSource {
             case kSectionHeadline:
                 return cellForHeader(at: indexPath)
             case kSectionDesc:
-                return cellForDescirption(at: indexPath)
+                return cellForDescription(at: indexPath)
             default:
                 return UITableViewCell()
         }

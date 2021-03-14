@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,7 @@
 		F79EE4B025F80BD400E463EB /* FlightTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EE4AF25F80BD400E463EB /* FlightTVC.swift */; };
 		F79EE4B525F80BDE00E463EB /* FlightTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F79EE4B425F80BDE00E463EB /* FlightTVC.xib */; };
 		F7AA368425FE66A0002AAA3A /* TestAirlineVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA368325FE66A0002AAA3A /* TestAirlineVM.swift */; };
+		F7AA369825FE7673002AAA3A /* TestAirlineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA369725FE7673002AAA3A /* TestAirlineVC.swift */; };
 		F7C2B9E325F4CAF200772E37 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C2B9E225F4CAF200772E37 /* APIClient.swift */; };
 		F7C2B9EB25F4CB0400772E37 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C2B9EA25F4CB0400772E37 /* APIRouter.swift */; };
 		F7C2B9F125F4CB3D00772E37 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C2B9F025F4CB3D00772E37 /* AppError.swift */; };
@@ -110,6 +111,7 @@
 		F79EE4AF25F80BD400E463EB /* FlightTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTVC.swift; sourceTree = "<group>"; };
 		F79EE4B425F80BDE00E463EB /* FlightTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightTVC.xib; sourceTree = "<group>"; };
 		F7AA368325FE66A0002AAA3A /* TestAirlineVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAirlineVM.swift; sourceTree = "<group>"; };
+		F7AA369725FE7673002AAA3A /* TestAirlineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAirlineVC.swift; sourceTree = "<group>"; };
 		F7C2B9E225F4CAF200772E37 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		F7C2B9EA25F4CB0400772E37 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		F7C2B9F025F4CB3D00772E37 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 				F7EC12BD25FE327300AC28F7 /* TestHomeVM.swift */,
 				F7E44CB225FCEED100E46098 /* TestFakeSplashVM.swift */,
 				F7AA368325FE66A0002AAA3A /* TestAirlineVM.swift */,
+				F7AA369725FE7673002AAA3A /* TestAirlineVC.swift */,
 			);
 			path = TestSunWebTests;
 			sourceTree = "<group>";
@@ -908,6 +911,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7AA369825FE7673002AAA3A /* TestAirlineVC.swift in Sources */,
 				F7E44CB325FCEED100E46098 /* TestFakeSplashVM.swift in Sources */,
 				F7AA368425FE66A0002AAA3A /* TestAirlineVM.swift in Sources */,
 				F7EC12BE25FE327300AC28F7 /* TestHomeVM.swift in Sources */,
