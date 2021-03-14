@@ -26,7 +26,13 @@ class TestHomeVM: XCTestCase {
         return homeVM
     }
     
+    func test_load_data() {
+        
+    }
     
+    func test_select_outbound_flight() {
+        
+    }
 }
 
 extension TestHomeVM: HomeVMDelegate {
