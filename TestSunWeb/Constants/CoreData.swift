@@ -7,5 +7,5 @@
 
 import Foundation
 
-let kFlightEntity = "Flight"
+let kFlightEntity = "FlightEntity"
 let kContainer = "TestSunWeb"

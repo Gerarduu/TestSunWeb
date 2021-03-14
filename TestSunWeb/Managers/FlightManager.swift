@@ -22,7 +22,7 @@ class FlightManager: NSObject {
         return container
     }()
     
-    func saveFlights(flights: [Flight], outBound: Bool, finish: @escaping (_: Result<Bool, Error>) -> Void) {
+    func saveFlights(flights: [Flight], outBound: Bool, finish: @escaping () -> Void) {
             
         let context = persistentContainer.viewContext
         
@@ -41,10 +41,10 @@ class FlightManager: NSObject {
             
             do {
                 try context.save()
-                finish(Result.success(true))
+                finish()
             } catch let error as NSError {
-                debugPrint("Could not save file. \(error), \(error.userInfo)")
-                finish(Result.failure(error))
+                debugPrint("Could not save flight. \(error), \(error.userInfo)")
+                finish()
             }
         }
     }
@@ -53,6 +53,26 @@ class FlightManager: NSObject {
         let context = persistentContainer.viewContext
         let items = try? context.fetch(FlightObject.fetchRequest()) as? [FlightObject]
         return items
+    }
+    
+    func deleteFlight(id: Int) {
+        
+        let context = persistentContainer.viewContext
+        
+        context.perform {
+            do {
+                let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: kFlightEntity)
+                fetchRequest.predicate = NSPredicate(format: "id = %@", NSNumber(value: id))
+                let elem = try context.fetch(fetchRequest)
+                
+                let elemToDelete = elem[0]
+                context.delete(elemToDelete)
+                
+                try context.save()
+            } catch let error as NSError {
+                debugPrint("Could not delete flight. \(error), \(error.userInfo)")
+            }
+        }
     }
     
     func saveContext() {
