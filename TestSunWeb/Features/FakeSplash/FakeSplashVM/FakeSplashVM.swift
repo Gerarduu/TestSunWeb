@@ -43,10 +43,11 @@ class FakeSplashVM {
                 }
                 self.airlines = data
                 AirlineManager.shared.deleteAirlines {
-                    AirlineManager.shared.saveAirlines(airlines: self.airlines)
+                    AirlineManager.shared.saveAirlines(airlines: self.airlines) {
+                        group.leave()
+                    }
                 }
             }
-            group.leave()
         }
         
         group.enter()

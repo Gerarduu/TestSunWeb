@@ -18,7 +18,8 @@
 "flight_tvc.airlines" = "\nAirlines";
 
 // MARK: - Airline
-"airline.airline" = " Airlines";
+"airline.airlines" = " Airlines";
+"airline.n_d" = "N/D";
 
 // MARK: - Toast
 

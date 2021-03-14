@@ -17,7 +17,7 @@ class AirlineManager: NSObject {
         return appDelegate.persistentContainer
     }
     
-    func saveAirlines(airlines: [Airline]) {
+    func saveAirlines(airlines: [Airline], finish: @escaping () -> Void) {
             
         let context = persistentContainer.viewContext
         
@@ -33,24 +33,22 @@ class AirlineManager: NSObject {
             }
             
             do {
+                finish()
                 try context.save()
             } catch let error as NSError {
                 debugPrint("Could not save airline. \(error), \(error.userInfo)")
+                finish()
             }
         }
     }
     
     func getAirline(id: String) -> AirlineObject? {
         let context = persistentContainer.viewContext
-        do {
-            let fetchRequest = NSFetchRequest<AirlineObject>(entityName: kAirlineEntity)
-            fetchRequest.predicate = NSPredicate(format: "id = %@", id)
-            let elem = try context.fetch(fetchRequest)
-            return elem[0]
-        } catch let error as NSError {
-            debugPrint("Could not delete airline. \(error), \(error.userInfo)")
-            return nil
-        }
+        
+        let fetchRequest = NSFetchRequest<AirlineObject>(entityName: kAirlineEntity)
+        fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+        let elem = try? context.fetch(fetchRequest)
+        return elem?.first
     }
     
     func deleteAirlines(finish: @escaping () -> Void) {

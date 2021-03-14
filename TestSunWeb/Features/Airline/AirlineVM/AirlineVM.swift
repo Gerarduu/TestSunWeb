@@ -15,7 +15,7 @@ protocol AirlineVMDelegate: class {
 class AirlineVM {
     
     weak var delegate: AirlineVMDelegate?
-    private var airline: AirlineObject!
+    private var airline: AirlineObject?
     private var airlineId: String!
     
     init(delegate: AirlineVMDelegate, airlineId: String) {
@@ -34,22 +34,22 @@ class AirlineVM {
 }
 
 extension AirlineVM {
-    var id:String {
-        return self.airline.id
+    var id:String? {
+        return self.airline?.id
     }
-    var name:String {
-        return self.airline.name
+    var name:String? {
+        return self.airline?.name
     }
-    var headline:String {
-        return self.airline.headline
+    var headline:String? {
+        return self.airline?.headline
     }
-    var description:String {
-        return self.airline.airlineDesc
+    var description:String? {
+        return self.airline?.airlineDesc
     }
-    var logoImg: URL {
-        return self.airline.logoImg
+    var logoImg: URL? {
+        return self.airline?.logoImg
     }
-    var mainImg:URL {
-        return self.airline.mainImg
+    var mainImg:URL? {
+        return self.airline?.mainImg
     }
 }

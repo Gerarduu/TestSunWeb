@@ -41,7 +41,11 @@ class AirlineVC: BaseVC {
     }
     
     func configure() {
-        self.title = airlineVM.id + "airline.airline".localized
+        if let title = airlineVM.id {
+            self.title = title+"airline.airlines".localized
+        } else {
+            self.title = "airline.n_d".localized
+        }
     }
 
     override func setupUI() {
@@ -61,8 +65,7 @@ class AirlineVC: BaseVC {
     
     func cellForTop(at indexPath: IndexPath) -> UITableViewCell {
         if let cell = mainTV.dequeueReusableCell(withIdentifier: kTopTVC) as? TopTVC {
-            let logo = self.airlineVM.logoImg
-            let snapshot = self.airlineVM.mainImg
+            guard let logo = self.airlineVM.logoImg, let snapshot = self.airlineVM.mainImg else { return UITableViewCell()}
             cell.selectionStyle = .none
             cell.configureCell(logo: logo, snapshot: snapshot)
             return cell
@@ -72,7 +75,7 @@ class AirlineVC: BaseVC {
     
     func cellForHeader(at indexPath: IndexPath) -> UITableViewCell {
         if let cell = mainTV.dequeueReusableCell(withIdentifier: kHeaderTVC) as? HeaderTVC {
-            let headline = self.airlineVM.headline
+            guard let headline = self.airlineVM.headline else { return UITableViewCell() }
             cell.selectionStyle = .none
             cell.configureCell(headline: headline)
             return cell
@@ -82,7 +85,7 @@ class AirlineVC: BaseVC {
     
     func cellForDescirption(at indexPath: IndexPath) -> UITableViewCell {
         if let cell = mainTV.dequeueReusableCell(withIdentifier: kDescriptionTVC) as? DescriptionTVC {
-            let description = self.airlineVM.description
+            guard let description = self.airlineVM.description else { return UITableViewCell() }
             cell.selectionStyle = .none
             cell.configureCell(description: description)
             return cell
