@@ -22,6 +22,7 @@ let kImageInbound = UIImage(named: "inbound")
 
 let kFakeSplashVC = "FakeSplashVC"
 let kHomeVC = "HomeVC"
+let kAirlineVC = "AirlineVC"
 let kLoadingVC = "LoadingVC"
 
 //MARK: - Sections Home
@@ -31,13 +32,28 @@ let kSectionOutboundFlights = "OutboundFlights"
 
 let kSectionHeader = "SectionHeader"
 
-//MARK: - TVC Home
+//MARK: - TVCs
 
 let kFlightTVC = "FlightTVC"
+let kTopTVC = "TopTVC"
+let kHeaderTVC = "HeaderTVC"
+let kDescriptionTVC = "DescriptionTVC"
 
 //MARK: - Toast
 
 let kToast = "Toast"
+
+//MARK: Sections Airline
+
+let kSectionTop = "Top"
+let kSectionHeadline = "Headline"
+let kSectionDesc = "Description"
+
+//MARK: Height for sections Airline
+
+let kHeightForTop = CGFloat(200)
+let kHeightForHeadline = CGFloat(70)
+let kHeightForDesc = CGFloat(300)
 
 //MARK: - Colors
 

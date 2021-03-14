@@ -7,20 +7,15 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class FlightManager: NSObject {
     
     static let shared = FlightManager()
-    private var flightEntity: NSEntityDescription?
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: kContainer)
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
+    var persistentContainer: NSPersistentContainer {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { fatalError("Could not convert delegate to AppDelegate") }
+        return appDelegate.persistentContainer
+    }
     
     func saveFlights(flights: [Flight], outBound: Bool, finish: @escaping () -> Void) {
             
@@ -72,16 +67,6 @@ class FlightManager: NSObject {
             } catch let error as NSError {
                 debugPrint("Could not delete flight. \(error), \(error.userInfo)")
             }
-        }
-    }
-    
-    func saveContext() {
-        let context = persistentContainer.viewContext
-        do {
-            try context.save()
-        } catch {
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
 }

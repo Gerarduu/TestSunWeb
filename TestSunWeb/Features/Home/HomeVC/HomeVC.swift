@@ -79,16 +79,27 @@ class HomeVC: BaseVC {
                 case kSectionOutboundFlights:
                     guard let flight = self.homeVM?.outboundFlights?[indexPath.row] else { return UITableViewCell() }
                     cell.configureCell(with: flight)
+                    cell.delegate = self
                     return cell
                 case kSectionInboundFlights:
                     guard let flight = self.homeVM?.filteredInboundFlights?[indexPath.row] else { return UITableViewCell() }
                     cell.configureCell(with: flight)
+                    cell.delegate = self
                     return cell
                 default:
                     return UITableViewCell()
             }
         } else {
             return UITableViewCell()
+        }
+    }
+    
+    func pushAirline(id: String) {
+        DispatchQueue.main.async { [weak self] in
+            if let airlineVC = kStoryboardHome.instantiateViewController(withIdentifier: kAirlineVC) as? AirlineVC {
+                airlineVC.id = id
+                self?.present(UINavigationController(rootViewController: airlineVC), animated: true, completion: nil)
+            }
         }
     }
 }
@@ -130,20 +141,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 60
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch sections[indexPath.section] {
-            case
-                kSectionOutboundFlights:
-                let flight = homeVM.outboundFlights[indexPath.row]
-                homeVM.selectOutboundFlight(outboundFlight: flight)
-            case kSectionInboundFlights:
-                let flight = homeVM.filteredInboundFlights[indexPath.row]
-                homeVM.selectInboundFlight(inboundFlight: flight)
-            default:
-                break
-        }
-    }
 }
 
 extension HomeVC: HomeVMDelegate {
@@ -164,5 +161,24 @@ extension HomeVC: HomeVMDelegate {
     func couldntSelectInboundFlight() {
         mainTV.reloadData()
         self.hideToast()
+    }
+}
+
+extension HomeVC: FlightTVCDelegate {
+    func didSelectFlight(flight: FlightObject) {
+        switch flight.outBound {
+            case true:
+                let flight = flight
+                homeVM.selectOutboundFlight(outboundFlight: flight)
+            case false:
+                let flight = flight
+                homeVM.selectInboundFlight(inboundFlight: flight)
+            default:
+                break
+        }
+    }
+    
+    func didSelectAirlne(airline: String) {
+        pushAirline(id: airline)
     }
 }

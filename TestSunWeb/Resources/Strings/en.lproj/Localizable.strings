@@ -17,6 +17,9 @@
 "flight_tvc.to" = " to ";
 "flight_tvc.airlines" = "\nAirlines";
 
+// MARK: - Airline
+"airline.airline" = " Airlines";
+
 // MARK: - Toast
 
 "toast.route_price_desc" = "Route price: ";

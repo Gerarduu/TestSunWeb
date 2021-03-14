@@ -13,7 +13,7 @@
            "name":"Iberia",
            "headline":"Fancy pizza or cappuccino? Book your flight to Rome now.",
            "description":"Iberia, legally incorporated as Iberia, Líneas Aéreas de España, S.A. Operadora, Sociedad Unipersonal, is the flag carrier airline of Spain, founded in 1927. Based in Madrid, it operates an international network of services from its main base of Madrid-Barajas Airport.",
-           "logoImg":"http://via.placeholder.com/100x100/e83a3a/ffffff?text=IB",
+           "logoImg":"https://via.placeholder.com/100x100/e83a3a/ffffff?text=IB",
            "mainImg":"https://cdn.pixabay.com/photo/2017/03/21/22/28/aircraft-2163503_1280.jpg"
         },
         {
@@ -29,7 +29,7 @@
            "name":"Ryanair",
            "headline":"Always Getting Better",
            "description":"Ryanair DAC is an Irish budget airline founded in 1984, headquartered in Swords, Dublin, Ireland, with its primary operational bases at Dublin and London Stansted airports. It forms the largest part of the Ryanair Holdings family of airlines, and has Ryanair UK, Ryanair Sun, Malta Air and Lauda as sister airlines.",
-           "logoImg":"http://via.placeholder.com/100x100/2761d6/ffffff?text=RY",
+           "logoImg":"https://via.placeholder.com/100x100/2761d6/ffffff?text=RY",
            "mainImg":"https://cdn.pixabay.com/photo/2019/03/19/13/08/airplane-4065698_1280.jpg"
         }
     ]

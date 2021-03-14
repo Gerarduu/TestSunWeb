@@ -8,4 +8,5 @@
 import Foundation
 
 let kFlightEntity = "FlightEntity"
+let kAirlineEntity = "AirlineEntity"
 let kContainer = "TestSunWeb"

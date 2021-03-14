@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AirlineEntity" representedClassName=".AirlineObject" syncable="YES">
+        <attribute name="airlineDesc" optional="YES" attributeType="String"/>
+        <attribute name="headline" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="logoImg" optional="YES" attributeType="URI"/>
+        <attribute name="mainImg" optional="YES" attributeType="URI"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="FlightEntity" representedClassName=".FlightObject" syncable="YES">
         <attribute name="airline" optional="YES" attributeType="String"/>
         <attribute name="arrivalAirportCode" optional="YES" attributeType="String"/>
@@ -12,5 +20,6 @@
     </entity>
     <elements>
         <element name="FlightEntity" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="AirlineEntity" positionX="-63" positionY="45" width="128" height="133"/>
     </elements>
 </model>
