@@ -43,7 +43,5 @@ extension FlightObject: Transport {
         }
     }
     
-    func isConbinableWith(transport: Transport) {
-        //
-    }
+    func isConbinableWith(transport: Transport) {}
 }

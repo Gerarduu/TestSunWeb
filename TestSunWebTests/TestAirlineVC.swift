@@ -44,7 +44,8 @@ class TestAirlineVC: XCTestCase {
         XCTAssertEqual(n, 3)
     }
     func test_n_rows_section() {
-        let expectation = self.expectation(description: "zuc")
+        let expectation = self.expectation(description: "test number of rows in section")
+        //Given
         let airline = Airline(
             id: "Mock",
             name: "Mock",
@@ -59,12 +60,15 @@ class TestAirlineVC: XCTestCase {
         }
         waitForExpectations(timeout: 5, handler: nil)
         self.sut = self.makeSUT(id: "Mock")
+        //When
         let n = sut.tableView(sut.mainTV, numberOfRowsInSection: sut.sections.count)
+        //Then
         XCTAssertEqual(n, 1)
     }
     
     func test_title() {
-        let expectation = self.expectation(description: "zuc")
+        let expectation = self.expectation(description: "test title")
+        //Given
         let airline = Airline(
             id: "Mock",
             name: "Mock",
@@ -78,12 +82,15 @@ class TestAirlineVC: XCTestCase {
             expectation.fulfill()
         }
         waitForExpectations(timeout: 5, handler: nil)
+        //When
         self.sut = self.makeSUT(id: "Mock")
+        //Then
         XCTAssertEqual(self.sut.title, "Mock Airlines")
     }
     
     func test_cell_for_top() {
-        let expectation = self.expectation(description: "zuc")
+        let expectation = self.expectation(description: "test cell for top")
+        //Given
         let airline = Airline(
             id: "Mock",
             name: "Mock",
@@ -97,13 +104,16 @@ class TestAirlineVC: XCTestCase {
             expectation.fulfill()
         }
         waitForExpectations(timeout: 5, handler: nil)
+        //When
         self.sut = self.makeSUT(id: "Mock")
         let tvc = self.sut.cellForTop(at: IndexPath(row: 0, section: 0))
+        //Then
         XCTAssertTrue(tvc.isKind(of: TopTVC.self))
     }
     
     func test_cell_for_header() {
-        let expectation = self.expectation(description: "zuc")
+        let expectation = self.expectation(description: "test cell for header")
+        //Given
         let airline = Airline(
             id: "Mock",
             name: "Mock",
@@ -117,13 +127,16 @@ class TestAirlineVC: XCTestCase {
             expectation.fulfill()
         }
         waitForExpectations(timeout: 5, handler: nil)
+        //When
         self.sut = self.makeSUT(id: "Mock")
         let tvc = self.sut.cellForHeader(at: IndexPath(row: 0, section: 1))
+        //Then
         XCTAssertTrue(tvc.isKind(of: HeaderTVC.self))
     }
     
     func test_cell_for_description() {
-        let expectation = self.expectation(description: "zuc")
+        let expectation = self.expectation(description: "test cell for description")
+        //Given
         let airline = Airline(
             id: "Mock",
             name: "Mock",
@@ -137,13 +150,16 @@ class TestAirlineVC: XCTestCase {
             expectation.fulfill()
         }
         waitForExpectations(timeout: 5, handler: nil)
+        //When
         self.sut = self.makeSUT(id: "Mock")
         let tvc = self.sut.cellForDescription(at: IndexPath(row: 0, section: 2))
+        //Then
         XCTAssertTrue(tvc.isKind(of: DescriptionTVC.self))
     }
     
     func test_height_for_sections() {
-        let expectation = self.expectation(description: "zuc")
+        let expectation = self.expectation(description: "test height for sections")
+        //Given
         let airline = Airline(
             id: "Mock",
             name: "Mock",
@@ -157,7 +173,9 @@ class TestAirlineVC: XCTestCase {
             expectation.fulfill()
         }
         waitForExpectations(timeout: 5, handler: nil)
+        //When
         self.sut = self.makeSUT(id: "Mock")
+        //Then
         XCTAssertEqual(sut.tableView(sut.mainTV, heightForRowAt: IndexPath(item: 0, section: 0)), kHeightForTop)
         XCTAssertEqual(sut.tableView(sut.mainTV, heightForRowAt: IndexPath(item: 0, section: 1)), kHeightForHeadline)
         XCTAssertEqual(sut.tableView(sut.mainTV, heightForRowAt: IndexPath(item: 0, section: 2)), kHeightForDesc)

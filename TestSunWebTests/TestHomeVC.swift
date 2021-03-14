@@ -15,7 +15,6 @@ class TestHomeVC: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        sut = makeSUT()
     }
     
     override func tearDown() {
@@ -27,31 +26,42 @@ class TestHomeVC: XCTestCase {
         //When
         let homeVC = kStoryboardHome.instantiateViewController(withIdentifier: kHomeVC) as! HomeVC
         homeVC.loadViewIfNeeded()
+        homeVC.homeVM = HomeVM(delegate: self)
         return homeVC
     }
     
     func test_home_vc_title() {
+        //When
+        sut = makeSUT()
         //Then
         XCTAssertEqual(sut.title, "Flights")
     }
     
     func test_fill_sections() {
+        //When
+        sut = makeSUT()
         //Then
         XCTAssertEqual(sut.sections.count, 2)
     }
     
     func test_sections_num() {
+        //When
+        sut = makeSUT()
         //Then
         let n = sut.numberOfSections(in: sut.mainTV)
         XCTAssertEqual(n, 2)
     }
     
     func test_height_for_row_in_section() {
+        //When
+        sut = makeSUT()
         //Then
         XCTAssertEqual(sut.mainTV.rowHeight, 60)
     }
     
     func test_view_for_header() {
+        //When
+        sut = makeSUT()
         //Then
         if  let view = sut.tableView(sut.mainTV, viewForHeaderInSection: 0) {
             XCTAssertTrue(view.isKind(of: UIView.self))
@@ -60,34 +70,31 @@ class TestHomeVC: XCTestCase {
         }
     }
     
-    func test_show_toast_correct_price() {
-        //Given
-        if let outboundFlight = FlightManager.shared.getFlights()?.filter({$0.outBound == 1}).first {
-            
-            outboundFlight.price = NSNumber(value: 20)
-            
-            sut.homeVM.selectOutboundFlight(outboundFlight: outboundFlight)
-            //When
-            sut.showToast()
+    func test_home_cell_section_outbound() {
+        //When
+        self.sut = makeSUT()
+        let rows = sut.mainTV.numberOfRows(inSection: 0)
+        for row in 0..<rows {
+            let tvc = self.sut.cellForFlight(indexPath: IndexPath(row: row, section: 0))
             //Then
-            XCTAssertEqual(sut.mainTV.contentInset, UIEdgeInsets(top: 0, left: 0, bottom: sut.toast.view.frame.size.height, right: 0))
-        } else {
-            XCTFail()
+            XCTAssertTrue(tvc.isKind(of: FlightTVC.self))
         }
     }
     
-    func test_show_toast_price_error() {
-        //Given
-        if let outboundFlight = FlightManager.shared.getFlights()?.filter({$0.outBound == 1}).first {
-            outboundFlight.price = NSNumber(value: 0 - 1)
-            
-            sut.homeVM.selectOutboundFlight(outboundFlight: outboundFlight)
-            //When
-            sut.showToast()
+    func test_home_cell_section_inbound() {
+        //When
+        self.sut = makeSUT()
+        let rows = sut.mainTV.numberOfRows(inSection: 1)
+        for row in 0..<rows {
+            let tvc = self.sut.cellForFlight(indexPath: IndexPath(row: row, section: 1))
             //Then
-            XCTAssertEqual(sut.mainTV.contentInset, UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
-        } else {
-            XCTFail()
+            XCTAssertTrue(tvc.isKind(of: FlightTVC.self))
         }
     }
+}
+
+extension TestHomeVC:HomeVMDelegate{
+    func didSelectOutboundFlight() {}
+    func didSelectInboundFlight() {}
+    func couldntSelectInboundFlight() {}
 }

@@ -32,6 +32,10 @@ let kSectionOutboundFlights = "OutboundFlights"
 
 let kSectionHeader = "SectionHeader"
 
+//MARK: Height for sections Home
+
+let kHeightHeaderHome = CGFloat(60)
+
 //MARK: - TVCs
 
 let kFlightTVC = "FlightTVC"
