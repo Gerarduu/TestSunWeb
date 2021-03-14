@@ -67,7 +67,7 @@
 		F7FB751825FA9CAC0064924F /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB751725FA9CAC0064924F /* SectionHeader.swift */; };
 		F7FB751D25FA9CEC0064924F /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7FB751C25FA9CEC0064924F /* SectionHeader.xib */; };
 		F7FD555725F4F909002FBC9F /* Airlines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD555625F4F909002FBC9F /* Airlines.swift */; };
-		F7FD555D25F5281D002FBC9F /* FileObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD555C25F5281D002FBC9F /* FileObject+CoreDataClass.swift */; };
+		F7FD555D25F5281D002FBC9F /* FlightObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD555C25F5281D002FBC9F /* FlightObject+CoreDataClass.swift */; };
 		F7FD556825F52845002FBC9F /* FlightObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD556725F52845002FBC9F /* FlightObject+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
@@ -161,7 +161,7 @@
 		F7FB751725FA9CAC0064924F /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		F7FB751C25FA9CEC0064924F /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
 		F7FD555625F4F909002FBC9F /* Airlines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airlines.swift; sourceTree = "<group>"; };
-		F7FD555C25F5281D002FBC9F /* FileObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F7FD555C25F5281D002FBC9F /* FlightObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlightObject+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F7FD556725F52845002FBC9F /* FlightObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlightObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -635,7 +635,7 @@
 		F7FD555B25F5280B002FBC9F /* FlightObj */ = {
 			isa = PBXGroup;
 			children = (
-				F7FD555C25F5281D002FBC9F /* FileObject+CoreDataClass.swift */,
+				F7FD555C25F5281D002FBC9F /* FlightObject+CoreDataClass.swift */,
 				F7FD556725F52845002FBC9F /* FlightObject+CoreDataProperties.swift */,
 			);
 			path = FlightObj;
@@ -885,7 +885,7 @@
 				F7D2E42325F3DA9A00B39D3A /* BaseVC.swift in Sources */,
 				F70633FE25FE3EAA0027ACE0 /* AirlineVC.swift in Sources */,
 				F7FB751825FA9CAC0064924F /* SectionHeader.swift in Sources */,
-				F7FD555D25F5281D002FBC9F /* FileObject+CoreDataClass.swift in Sources */,
+				F7FD555D25F5281D002FBC9F /* FlightObject+CoreDataClass.swift in Sources */,
 				F7D2E41F25F3DA9A00B39D3A /* AppDelegate.swift in Sources */,
 				F767825B25F3E1D30010C40C /* UIView+Utils.swift in Sources */,
 				F79EE4B025F80BD400E463EB /* FlightTVC.swift in Sources */,
