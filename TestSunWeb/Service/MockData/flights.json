@@ -31,17 +31,17 @@
            },
            {
               "id":5,
-              "airline":"Transavia",
-              "departureAirportCode":"BCN",
-              "arrivalAirportCode":"ROT",
-              "price":30
-           },
-           {
-              "id":6,
               "airline":"Ryanair",
               "departureAirportCode":"GIR",
               "arrivalAirportCode":"AMS",
               "price":32
+           },
+           {
+               "id":7,
+               "airline":"Transavia",
+               "departureAirportCode":"BCN",
+               "arrivalAirportCode":"AMS",
+               "price":32
            }
         ],
         "inboundFlights":[
@@ -71,13 +71,6 @@
               "airline":"Vueling",
               "departureAirportCode":"AMS",
               "arrivalAirportCode":"GIR",
-              "price":30
-           },
-           {
-              "id":15,
-              "airline":"Transavia",
-              "departureAirportCode":"AMS",
-              "arrivalAirportCode":"BCN",
               "price":30
            }
         ]

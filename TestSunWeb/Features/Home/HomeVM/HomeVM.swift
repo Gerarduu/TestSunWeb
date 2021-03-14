@@ -19,7 +19,6 @@ class HomeVM {
     private var flights: [FlightObject]!
     private var selectedOutboundFlight: FlightObject?
     private var selectedInboundFlight: FlightObject?
-    var filteredInboundFlights: [FlightObject]!
     
     init(delegate: HomeVMDelegate) {
         self.delegate = delegate
@@ -40,15 +39,13 @@ class HomeVM {
     }
     
     func loadSelectedFlights() {
-        /// Get the previously selected flights
-        self.selectedOutboundFlight = outboundFlights.first(where: {$0.checked == true})
-        self.delegate?.didSelectOutboundFlight()
-        self.filteredInboundFlights = inboundFlights.filter{$0.visible == true}
-        if self.filteredInboundFlights.count > 0 {
-            self.selectedInboundFlight = filteredInboundFlights.first(where: {$0.checked == true})
-            self.delegate?.didSelectInboundFlight()
-        } else {
-            self.delegate?.couldntSelectInboundFlight()
+        /// If we can get a previously selected flight, process it.
+        if let selectedOutboundFlight = outboundFlights.first(where: {$0.checked == true}) {
+            selectOutboundFlight(outboundFlight: selectedOutboundFlight)
+        } else { /// If we cannot get a previously selected flight, select the cheapest one.
+            if let cheapestOutboundFlight = self.outboundFlights.first {
+                selectOutboundFlight(outboundFlight: cheapestOutboundFlight)
+            }
         }
     }
     
@@ -88,8 +85,6 @@ class HomeVM {
             }
         }
         
-        self.filteredInboundFlights = inboundFlights.filter{$0.visible == true}
-        
         /// Select the cheapest inbound flight
         if let cheapestFlight = self.filteredInboundFlights.first {
             selectInboundFlight(inboundFlight: cheapestFlight)
@@ -114,21 +109,27 @@ class HomeVM {
 }
 
 extension HomeVM {
+    
+    var filteredInboundFlights: [FlightObject]! {
+        return inboundFlights.filter{$0.visible == true}
+    }
+    
     var routePrice: Float? {
-        guard selectedOutboundFlight != nil, selectedInboundFlight != nil else {
+        guard let selectedOutboundFlight = self.selectedOutboundFlight,
+              selectedOutboundFlight.transportPrice >= 0,
+              let selectedInboundFlight = self.selectedInboundFlight,
+              selectedInboundFlight.transportPrice >= 0 else {
             return nil
         }
-        return selectedInboundFlight!.transportPrice + selectedOutboundFlight!.transportPrice
+        return selectedInboundFlight.transportPrice + selectedOutboundFlight.transportPrice
     }
     
     var outboundFlights: [FlightObject]! {
         return self.flights?
             .filter{$0.outBound == 1}
             .sorted(by: {
-                guard let first: NSNumber = $0.price, let second: NSNumber = $1.price else {
-                    return false
-                }
-                return first.intValue < second.intValue
+                let first = $0.transportPrice, second = $1.transportPrice
+                return first < second
             })
     }
     
@@ -136,10 +137,8 @@ extension HomeVM {
         return self.flights?
             .filter{$0.outBound == 0}
             .sorted(by: {
-                guard let first: NSNumber = $0.price, let second: NSNumber = $1.price else {
-                    return false
-                }
-                return first.intValue < second.intValue
+                let first = $0.transportPrice, second = $1.transportPrice
+                return first < second
             })
     }
 }

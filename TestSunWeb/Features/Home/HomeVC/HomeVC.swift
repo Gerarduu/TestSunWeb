@@ -14,9 +14,10 @@ class HomeVC: BaseVC {
         didSet {
             mainTV.delegate = self
             mainTV.dataSource = self
-            mainTV.register(UINib(nibName: kFlightTVC, bundle: .main), forCellReuseIdentifier: kFlightTVC)
-            mainTV.register(UINib(nibName: kSectionHeader, bundle: .main), forHeaderFooterViewReuseIdentifier: kSectionHeader)
             mainTV.separatorStyle = .none
+            mainTV.showsVerticalScrollIndicator = false
+            mainTV.register(UINib(nibName: kFlightTVC, bundle: .main), forCellReuseIdentifier: kFlightTVC)
+            mainTV.contentInset = UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 0)
             mainTV.backgroundColor = kColorGray
             mainTV.rowHeight = 60
         }
@@ -33,21 +34,22 @@ class HomeVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "home.title".localized
+        setup()
+        fillSections()
         setVM()
-        
-    }
-
-    func setVM() {
-        homeVM = HomeVM(delegate: self)
     }
     
+    func setup() {
+        self.title = "home.title".localized
+    }
+
     func fillSections() {
-        if sections.count == 0 {
-            sections.append(kSectionOutboundFlights)
-            sections.append(kSectionInboundFlights)
-        }
-        mainTV.reloadData()
+        sections.append(kSectionOutboundFlights)
+        sections.append(kSectionInboundFlights)
+    }
+    
+    func setVM() {
+        homeVM = HomeVM(delegate: self)
     }
     
     func showToast() {
@@ -55,12 +57,13 @@ class HomeVC: BaseVC {
             self.toast = ToastVC(containerView: self.view)
             self.toast.add()
         }
-        self.toast.show()
         guard let price = homeVM.routePrice else {
+            self.hideToast()
             return
         }
-        self.mainTV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: self.toast.view.frame.size.height, right: 0)
+        self.toast.show()
         self.toast.configure(price: price)
+        self.mainTV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: self.toast.view.frame.size.height, right: 0)
     }
     
     func hideToast() {
@@ -111,17 +114,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         return cellForFlight(indexPath: indexPath)
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch sections[section] {
-            case kSectionOutboundFlights:
-                return "home.outbound_header".localized
-            case kSectionInboundFlights:
-                return "home.inbound_header".localized
-            default:
-                return ""
-        }
-    }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch sections[section] {
             case kSectionOutboundFlights:
@@ -156,11 +148,11 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeVC: HomeVMDelegate {
     func didSelectOutboundFlight() {
-        self.fillSections()
+        mainTV.reloadData()
     }
     
     func didSelectInboundFlight() {
-        self.fillSections()
+        mainTV.reloadData()
         self.showToast()
         guard self.homeVM.outboundFlights.count > 0 else {
             return
@@ -170,7 +162,7 @@ extension HomeVC: HomeVMDelegate {
     }
     
     func couldntSelectInboundFlight() {
-        self.fillSections()
+        mainTV.reloadData()
         self.hideToast()
     }
 }
