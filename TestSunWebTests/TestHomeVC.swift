@@ -65,39 +65,6 @@ class TestHomeVC: XCTestCase {
         }
     }
     
-    func test_show_toast_correct_price() {
-        sut = makeSUT()
-        //Given
-        if let outboundFlight = FlightManager.shared.getFlights()?.filter({$0.outBound == 1}).first {
-            
-            outboundFlight.price = NSNumber(value: 20)
-            
-            sut.homeVM.selectOutboundFlight(outboundFlight: outboundFlight)
-            //When
-            sut.showToast()
-            //Then
-            XCTAssertEqual(sut.mainTV.contentInset, UIEdgeInsets(top: 0, left: 0, bottom: sut.toast.view.frame.size.height, right: 0))
-        } else {
-            XCTFail()
-        }
-    }
-    
-    func test_show_toast_price_error() {
-        sut = makeSUT()
-        //Given
-        if let outboundFlight = FlightManager.shared.getFlights()?.filter({$0.outBound == 1}).first {
-            outboundFlight.price = NSNumber(value: 0 - 1)
-            
-            sut.homeVM.selectOutboundFlight(outboundFlight: outboundFlight)
-            //When
-            sut.showToast()
-            //Then
-            XCTAssertEqual(sut.mainTV.contentInset, UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
-        } else {
-            XCTFail()
-        }
-    }
-    
     func test_home_cell_section_outbound() {
         self.sut = makeSUT()
         let rows = sut.mainTV.numberOfRows(inSection: 0)
