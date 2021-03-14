@@ -41,7 +41,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRv-Ja-6zC">
-                        <rect key="frame" x="179" y="0.0" width="83" height="60"/>
+                        <rect key="frame" x="170" y="0.0" width="83" height="60"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="83" id="CLc-IN-26c"/>
                             <constraint firstAttribute="height" constant="60" id="ons-jM-htx"/>
@@ -60,7 +60,7 @@
                     <constraint firstItem="rEz-ny-Mhe" firstAttribute="leading" secondItem="buy-jJ-OVB" secondAttribute="leading" constant="20" id="e5s-tq-m2g"/>
                     <constraint firstItem="rEz-ny-Mhe" firstAttribute="centerY" secondItem="buy-jJ-OVB" secondAttribute="centerY" id="hBM-4U-KTD"/>
                     <constraint firstItem="JRv-Ja-6zC" firstAttribute="centerY" secondItem="buy-jJ-OVB" secondAttribute="centerY" id="lNm-Ug-pfd"/>
-                    <constraint firstItem="JRv-Ja-6zC" firstAttribute="leading" secondItem="buy-jJ-OVB" secondAttribute="leading" constant="179" id="o3H-yi-cFt"/>
+                    <constraint firstItem="JRv-Ja-6zC" firstAttribute="leading" secondItem="buy-jJ-OVB" secondAttribute="leading" constant="170" id="o3H-yi-cFt"/>
                     <constraint firstItem="k11-u3-i0G" firstAttribute="leading" secondItem="FIc-YZ-d2Y" secondAttribute="trailing" constant="5" id="sgw-e2-NwT"/>
                 </constraints>
             </tableViewCellContentView>

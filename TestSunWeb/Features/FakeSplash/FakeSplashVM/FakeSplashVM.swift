@@ -30,7 +30,7 @@ class FakeSplashVM {
         let group = DispatchGroup()
         
         group.enter()
-        MockAPI.shared.requestMockObject(route: "airlines") { [weak self] (result: Result<AirlinesRoot,Error>) in
+        MockAPI.shared.requestMockObject(route: kJsonAirlines) { [weak self] (result: Result<AirlinesRoot,Error>) in
             guard let `self` = self else {return}
             switch result {
             case .failure(let err):
@@ -51,7 +51,7 @@ class FakeSplashVM {
         }
         
         group.enter()
-        MockAPI.shared.requestMockObject(route: "flights") { [weak self] (result: Result<FlightsRoot,Error>) in
+        MockAPI.shared.requestMockObject(route: kJsonFlights) { [weak self] (result: Result<FlightsRoot,Error>) in
             guard let `self` = self else {return}
             switch result {
             case .failure(let err):

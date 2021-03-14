@@ -535,7 +535,6 @@
 		F7D2E46F25F3DE0B00B39D3A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F7741EB125F95AD90047E9D5 /* Toast */,
 				F7D2E47125F3DE1500B39D3A /* Reusable */,
 				F7D2E47025F3DE0F00B39D3A /* Storyboards */,
 			);
@@ -555,6 +554,7 @@
 		F7D2E47125F3DE1500B39D3A /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				F7741EB125F95AD90047E9D5 /* Toast */,
 				F7CA102625FE5E55006C93A3 /* DescriptionTVC */,
 				F7CC546625FE5D7900D710A0 /* HeaderTVC */,
 				F7CC544325FE42A400D710A0 /* TopTVC */,
