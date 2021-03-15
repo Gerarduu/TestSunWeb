@@ -39,10 +39,17 @@ class HomeVM {
     }
     
     func loadSelectedFlights() {
-        /// If we can get a previously selected flight, process it.
-        if let selectedOutboundFlight = outboundFlights.first(where: {$0.checked == true}) {
-            selectOutboundFlight(outboundFlight: selectedOutboundFlight)
-        } else { /// If we cannot get a previously selected flight, select the cheapest one.
+        /// If we can get a previously selected flights, tell the VC that there are selected flights.
+        if let outboundFlight = outboundFlights.first(where: {$0.checked == true}) {
+            self.selectedOutboundFlight = outboundFlight
+            delegate?.didSelectOutboundFlight()
+            if let inboundFlight = filteredInboundFlights.first(where:{$0.checked == true}) {
+                self.selectedInboundFlight = inboundFlight
+                delegate?.didSelectInboundFlight()
+            } else {
+                delegate?.couldntSelectInboundFlight()
+            }
+        } else { /// If we cannot get a previously selected flights, select the cheapest ones.
             if let cheapestOutboundFlight = self.outboundFlights.first {
                 selectOutboundFlight(outboundFlight: cheapestOutboundFlight)
             }
